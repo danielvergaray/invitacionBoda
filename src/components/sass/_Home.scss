@@ -1,0 +1,182 @@
+@import "/src/components/sass/reutilizables/colors";
+
+@media (max-width: 846px) {
+  .mobile-home-hero {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .hero-titulo {
+      width: 70vw;
+      padding-top: 20vh;
+      margin: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .hero-fecha {
+      text-align: center;
+
+      p {
+        font-size: 1.5rem;
+        color: $Principal-blanco;
+        padding-left: 25vw;
+      }
+    }
+  }
+
+  .mobile-home-contador {
+    padding: 50px 0;
+    text-align: center;
+
+    .contador-imagen {
+      width: 80vw;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    .contador-titulo {
+      padding-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+
+    .contador-subtitulo {
+      font-size: 1.25rem;
+      padding-bottom: 50px;
+    }
+
+    .home-cuentaRegresiva {
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      div {
+        display: flex;
+        justify-content: space-around;
+
+        .contador-recuadro {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100px;
+
+          
+
+          .contador-recuadro-numero {
+            width: 100%;
+
+            .contador-recuadro-digito {
+              width: 100%;
+              padding: 0;
+
+              p {
+                font-size: 3.5rem;
+                padding-left: 5vw;
+              }
+            }
+            .contador-recuadro-span {
+              padding-left: 5vw;
+              width: 100%;
+              span {
+                background-color: black;
+                width: 1px;
+                height: 100%;
+                display: block;
+                margin: auto;
+              }
+            }
+          }
+          .contador-texto {
+            background-color: $botones-naranja;
+            border: 1px solid $botones-naranja;
+            border-radius: 15px;
+            margin-top: 5px;
+            p {
+              font-size: 12px;
+              color: $Principal-blanco;
+              padding: 5px 8px;
+            }
+          }
+        }
+        .contador-recuadro:nth-child(1) {
+          .contador-recuadro-numero {
+            .contador-recuadro-span {
+              padding-left: 10px;
+            
+            }
+          }
+        }
+
+        .contador-recuadro:nth-child(4) {
+          .contador-recuadro-numero {
+            .contador-recuadro-span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-sobreBoda {
+    padding: 50px 0;
+    background-color: $Principal-salmom;
+
+    .sobreBoda-imagen {
+      width: 50vw;
+      margin: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .sobreBoda-subtitulo {
+      text-align: center;
+      padding: 20px 0 10px;
+      p {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px;
+      }
+    }
+
+    .sobreBoda-fecha-hora-container {
+      .sobreBoda-fecha-hora {
+        display: grid;
+        grid-template-columns: 40% 10% 50%;
+
+        .sobreBoda-fecha {
+          grid-column: 1;
+          text-align: right;
+          p:nth-child(1) {
+            font-size: 3.5rem;
+          }
+        }
+        .sobreBoda-span {
+          grid-column: 2;
+          width: 100%;
+          span {
+            background-color: $botones-naranja;
+            width: 1px;
+            height: 100%;
+            display: block;
+            margin: auto;
+          }
+        }
+        .sobreBoda-hora {
+          grid-column: 3;
+
+          p:nth-child(1) {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+}

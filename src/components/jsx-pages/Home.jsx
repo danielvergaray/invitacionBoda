@@ -1,29 +1,51 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import CuentaRegresiva from "../contador/CuentaRegresiva";
+import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
+import tituloImagen from "../../assets/imagenes/NOMBRES_03.png";
+import tituloContador from "../../assets/imagenes/LOSESPERAMOS.png";
+import SobreLaBoda from "./SobreLaBoda";
 
 const Home = () => {
   return (
     <>
-      <section className="h-screen bg-[url('../../src/assets/imagenes/FOTO-HOME-MOBILE.jpg')] bg-center bg-no-repeat bg-cover">
-        <p>29.06.24</p>
+      <section
+        className="mobile-home-hero"
+        style={{ backgroundImage: `url(${imagenHome1})` }}
+      >
+        <div className="hero-titulo">
+          <img className="titulo-imagen" src={tituloImagen} alt="" />
+        </div>
+        <div className="hero-fecha">
+          <p>29.06.24</p>
+        </div>
       </section>
 
-      <section className="bg-white">
-        <div>
-          <img src="" alt="" />
+      <section className="mobile-home-contador">
+        <div className="contador-imagen">
+          <img src={tituloContador} alt="" />
         </div>
-        <div>
-          <h2 className="text-black">Nuestra gran aventura comienza</h2>
+        <div className="contador-titulo">
+          <h2>Nuestra gran </h2>
+          <h2>aventura comienza</h2>
         </div>
-        <div>
+        <div className="contador-subtitulo">
           <p>y queremos que seas parte</p>
-          <p>¡Te esperamos este día especial!</p>
-          <ReactTyped className="text-white" strings={["Here you can find anything"]} typeSpeed={40} loop/>
+
+          <ReactTyped
+            className="text-black"
+            strings={["¡Te esperamos este día especial!"]}
+            typeSpeed={40}
+            loop
+          />
         </div>
-        <div>
-        <CuentaRegresiva/>
+        <div className="home-cuentaRegresiva">
+          <CuentaRegresiva />
         </div>
+      </section>
+
+      <section className="mobile-sobreBoda">
+        <SobreLaBoda/>
       </section>
     </>
   );
