@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactTyped } from "react-typed";
 /* import { ReactTyped } from "react-typed";
 import CuentaRegresiva from "../contador/CuentaRegresiva";
 import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
@@ -10,62 +11,102 @@ import InfoContext from "../infoContext/InfoContext";
 import { useContext } from "react";
 
 const Home = () => {
-  const { informacion } = useContext(InfoContext);
-  console.log(informacion);
-  console.log(informacion[0].imagenes);
+  const { infoHomeArray, infoContadorArray, infoSobreBodaArray } =
+    useContext(InfoContext);
+  /* console.log(informacion);
+  console.log(informacion[0].imagenes); */
   /*  console.log(ImagenesHomeArray[0].imagen); */
+
   return (
     <>
-      {informacion.map((seccion) => (
-        <>
-          {seccion.imagenes.map((imagen) => (
-            <section
-              className="mobile-home-hero"
-              style={{
-                backgroundImage: `url(${imagen.imagen1})`,
-              }}
-            >
-              <div className="hero-titulo">
-                <img
-                  className="titulo-imagen"
-                  src={imagen.tituloImagenPortada1}
-                  alt=""
-                />
-              </div>
-              <div className="hero-fecha">
-                <p>29.06.24</p>
-              </div>
-            </section>
+      <section
+        className="mobile-home-hero"
+        style={{
+          backgroundImage: `url(${imagenHome1})`,
+        }}
+      >
+        <div className="hero-titulo">
+          {infoHomeArray.map((info) => (
+            <img
+              className="titulo-imagen"
+              src={info.tituloImagenPortada}
+              alt=""
+            />
           ))}
-        </>
-      ))}
+        </div>
+        <div className="hero-fecha">
+          {infoHomeArray.map((info) => (
+            <p>{info.fecha} </p>
+          ))}
+        </div>
+      </section>
 
-      {/*     <section className="mobile-home-contador">
+      <section className="mobile-home-contador">
+        {infoContadorArray.map((info) => (
+          <>
             <div className="contador-imagen">
-              <img src={tituloContador} alt="" />
+              <img src={info.tituloImagen} alt="" />
             </div>
             <div className="contador-titulo">
-              <h2>Nuestra gran </h2>
-              <h2>aventura comienza</h2>
+              <h2>{info.titulo} </h2>
+              <h2>{info.titulo2}</h2>
             </div>
             <div className="contador-subtitulo">
-              <p>y queremos que seas parte</p>
-
-              <ReactTyped
-                className="text-black"
-                strings={["¡Te esperamos este día especial!"]}
-                typeSpeed={40}
-                loop
-              />
+              <p>{info.subtitulo}</p>
             </div>
-            <div className="home-cuentaRegresiva">
-              <CuentaRegresiva />
-            </div>
-          </section> */}
+          </>
+        ))}
+        <ReactTyped
+          className="text-black"
+          strings={["¡Te esperamos este día especial!"]}
+          typeSpeed={40}
+          loop
+        />
 
-      {/*  <section className="mobile-sobreBoda">
-            <SobreLaBoda />
-          </section> */}
+        {/* <div className="home-cuentaRegresiva">
+          <CuentaRegresiva />
+        </div> */}
+      </section>
+
+      <section className="mobile-sobreBoda">
+        {infoSobreBodaArray.map((info) => (
+          <>
+            <div className="sobreBoda-imagen">
+              <img src={info.tituloImagen} alt="" />
+            </div>
+            <div className="sobreBoda-subtitulo">
+              <p>{info.subtitulo}</p>
+            </div>
+            <div className="sobreBoda-fecha-hora-container">
+              <div className="sobreBoda-fecha-hora">
+                <div className="sobreBoda-fecha">
+                  <p>{info.dia}</p>
+                  <p>{info.mes}</p>
+                </div>
+                <div className="sobreBoda-span">
+                  <span></span>
+                </div>
+                <div className="sobreBoda-hora">
+                  <p>{info.hora}</p>
+                  <p>{info.rango}</p>
+                </div>
+                
+              </div>
+
+              <div className="sobreBoda-subtitulo">
+                  <p>{info.subtitulo2}</p>
+                </div>
+                <div >
+                  <p>{info.direccion}</p>
+                  <p>{info.distrito}</p>
+                </div>
+                <div>
+                  <button>{info.boton}</button>
+                </div>
+            </div>
+          </>
+        ))}
+      </section>
     </>
   );
 };

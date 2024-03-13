@@ -12,7 +12,7 @@ import tituloSeccionForm from "../../assets/imagenes/titulos/NOSACOMPANAS.png";
 import tituloSeccionFooter from "../../assets/imagenes/titulos/LOSESPERAMOS.png";
 
 const InfoContextProvider = ({ children }) => {
-  const informacion = [
+  /* const informacion = [
     {
       imagenes: [
         { imagen1: imagenHome1 },
@@ -89,7 +89,7 @@ const InfoContextProvider = ({ children }) => {
     {
       imagenes: [{ imagentitulo: tituloSeccionFooter }],
     },
-  ];
+  ]; */
   
 
  
@@ -103,61 +103,57 @@ const InfoContextProvider = ({ children }) => {
   const seccionFormArray = Object.values(informacion.seccionForm);
   const seccionFooterArray = Object.values(informacion.seccionFooter); */
 
-  const seccionHome = [
+  const informacion = [
     {
-      imagenes: [
+      seccionHome: [
         {
-          imagen: imagenHome1,
+          imagen1: imagenHome1,
         },
         {
-          imagen: imagenHome2,
+          imagen2: imagenHome2,
         },
+        {
+          tituloImagenPortada: tituloImagenPortada,
+        },
+        {
+          fecha: "29.06.24",
+        }
       ],
-      textos: [
+      seccionContador: [
         {
-          titulo: "29.06.24",
+          tituloImagen: tituloSeccionContador,
         },
+        {
+          titulo: "nuestra gran",
+          titulo2: "aventura comienza",
+          subtitulo: "y queremos que seas parte",
+        }
       ],
-      tituloImagenPortada: tituloImagenPortada,
+      seccionSobreBoda: [
+        {
+          tituloImagen: tituloSeccionSobreBoda,
+          subtitulo: "fecha y hora",
+          dia: "29",
+          mes: "de junio",
+          hora: "3:00",
+          rango: "de la tarde",
+          subtitulo2: "lugar",
+          direccion: "Jirón La Floresta 125 - Camacho",
+          distrito: "Santiado de Surco",
+          boton: "ver mapa",
+        },
+      
+      ]
+      
+      
     },
   ];
   
+  const infoHomeArray = Object.values(informacion[0].seccionHome);
+  const infoContadorArray = Object.values(informacion[0].seccionContador);
+  const infoSobreBodaArray = Object.values(informacion[0].seccionSobreBoda);
 
-  const seccionContador = [
-    {
-      imagenes: [
-        {
-          tituloSeccionContador,
-        },
-      ],
-      textos: [
-        {
-          titulo: ["nuestra gran", "aventura comienza"],
-          subtitulo: "y queremos que seas parte",
-          subtitulo2: "¡Te esperamos este día especial!",
-        },
-      ],
-    },
-  ];
 
-  const seccionSobreBoda = [
-    {
-      imagenes: [tituloSeccionSobreBoda],
-      textos: [
-        {
-          subtitulo: "fecha y hora",
-          texto: "29",
-          texto2: "de junio",
-          texto3: "3:00",
-          texto4: "de la tarde",
-          texto5: "lugar",
-          texto6: "Jirón La Floresta 125 - Camacho",
-          texto7: "Santiado de Surco",
-          boton8: "ver mapa",
-        },
-      ],
-    },
-  ];
 
   const seccionDressCode = [
     {
@@ -213,13 +209,13 @@ const InfoContextProvider = ({ children }) => {
     },
   ];
   
-  const ImagenesHomeArray = Object.values(seccionHome[0].imagenes);
+ // const ImagenesHomeArray = Object.values(seccionHome[0].imagenes);
 
 
   const values = {
-    /* seccionHome,
-    ImagenesHomeArray */
-    informacion
+    infoHomeArray,
+    infoContadorArray,
+    infoSobreBodaArray,
   };
 
  
