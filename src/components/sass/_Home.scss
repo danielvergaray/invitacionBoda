@@ -29,26 +29,33 @@
   }
 
   .mobile-home-contador {
-    padding: 50px 0;
     text-align: center;
 
-    .contador-imagen {
+    /* .contenedor-imagen {
       width: 80vw;
       margin: auto;
       img {
-        width: 100%;
+        width: 20%;
       }
-    }
+    } */
 
     .contador-titulo {
       padding-bottom: 10px;
-      font-size: 1.5rem;
       font-weight: 100;
+      width: 90%;
+      margin: auto;
+      letter-spacing: 5px;
+      line-height: 20px;
+      padding-top: 15px;
     }
 
     .contador-subtitulo {
-      font-size: 1.25rem;
       padding-bottom: 50px;
+
+      span {
+        color: $Textos-negro-claro;
+        font-size: 1.5rem;
+      }
     }
 
     .home-cuentaRegresiva {
@@ -64,8 +71,6 @@
           flex-direction: column;
           align-items: center;
           width: 100px;
-
-          
 
           .contador-recuadro-numero {
             width: 100%;
@@ -83,7 +88,7 @@
               padding-left: 5vw;
               width: 100%;
               span {
-                background-color: black;
+                background-color: $Secundario-naranja;
                 width: 1px;
                 height: 100%;
                 display: block;
@@ -92,14 +97,13 @@
             }
           }
           .contador-texto {
-            background-color: $botones-naranja;
-            border: 1px solid $botones-naranja;
-            border-radius: 15px;
             margin-top: 5px;
-            p {
+            button {
               font-size: 12px;
-              color: $Principal-blanco;
               padding: 5px 8px;
+              font-weight: 100;
+              text-transform: lowercase;
+              font-size: 0.7rem;
             }
           }
         }
@@ -107,7 +111,6 @@
           .contador-recuadro-numero {
             .contador-recuadro-span {
               padding-left: 10px;
-            
             }
           }
         }
@@ -124,26 +127,20 @@
   }
 
   .mobile-sobreBoda {
-    padding: 50px 0;
-    background-color: $Principal-salmom;
+    background-color: $Principal-gris-claro;
 
-    .sobreBoda-imagen {
+    /*  .contenedor-imagen {
       width: 50vw;
       margin: auto;
 
       img {
         width: 100%;
       }
-    }
+    } */
 
     .sobreBoda-subtitulo {
       text-align: center;
       padding: 20px 0 10px;
-      p {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 10px;
-      }
     }
 
     .sobreBoda-fecha-hora-container {
@@ -155,16 +152,16 @@
           grid-column: 1;
           text-align: right;
           p:nth-child(1) {
-            font-size: 3.5rem;
+            font-size: 5rem;
           }
         }
         .sobreBoda-span {
           grid-column: 2;
           width: 100%;
           span {
-            background-color: $botones-naranja;
-            width: 1px;
-            height: 100%;
+            background-color: $Secundario-naranja;
+            width: 2px;
+            height: 70%;
             display: block;
             margin: auto;
           }
@@ -173,10 +170,55 @@
           grid-column: 3;
 
           p:nth-child(1) {
-            font-size: 3.5rem;
+            font-size: 5rem;
           }
+        }
+      }
+      .sobreBoda-lugar {
+        text-align: center;
+        padding: 50px 0;
+        .sobreBoda-lugar-ubicacion {
+          padding: 5px 0 15px;
+          /*  p{
+            text-align: center;
+            font-size: 1.25rem;
+            color: $Principal-gris-claro;
+          } */
         }
       }
     }
   }
+
+  .mobile-dressCode {
+    /* text-align: center; */
+    background-color: $Principal-gris-claro;
+    /* .dressCode-textos {
+      padding: 20px 0 30px;
+      h3:nth-child(2) {
+        padding: 5px 0;
+      }
+      h3 {
+        letter-spacing: 2px;
+      }
+    } */
+  }
+  .mobile-carousel {
+    overflow-x: hidden;
+    p {
+      padding: 10px 0 25px;
+    }
+
+    .carousel-contenedor {
+      display: flex;
+      overflow-x: scroll;
+      
+      img {
+        width: 50vw;
+        padding: 0 5px;
+      }
+    }
+  }
+  /* .mobile-regalos{
+
+  } */
 }

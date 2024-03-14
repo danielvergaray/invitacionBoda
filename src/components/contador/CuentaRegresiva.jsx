@@ -68,7 +68,7 @@ const CuentaRegresiva = () => {
         </div>
 
         <div className="contador-texto">
-          <p>{interval}</p>
+          <button>{interval}</button>
         </div>
       </div>
     );
