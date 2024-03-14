@@ -10,10 +10,9 @@ import tituloSeccionCarousel from "../../assets/imagenes/titulos/RAMA.png";
 import tituloSeccionRegalos from "../../assets/imagenes/titulos/LOSREGALOS.png";
 import tituloSeccionForm from "../../assets/imagenes/titulos/NOSACOMPANAS.png";
 import tituloSeccionFooter from "../../assets/imagenes/titulos/LOSESPERAMOS.png";
-import imagenCarousel1 from "../../assets/imagenes/carousel/Carousel-img-1.jpeg"
+import imagenCarousel1 from "../../assets/imagenes/carousel/Carousel-img-1.jpeg";
 
 const InfoContextProvider = ({ children }) => {
- 
   const informacion = [
     {
       seccionHome: [
@@ -90,16 +89,24 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionForm,
           titulo: "Es muy importante para nosotros que confirmes tu presencia",
-          nombres: "Nombre y Apellido",
-          asistencia: "¿Asistirás?",
-          mensaje: "Escribe tu mensaje",
+          inputs: [
+            {
+              input: "Nombre y Apellido",
+            },
+            {
+              input: "¿Asistirás?",
+            },
+            {
+              input: "Escribe tu mensaje",
+            },
+          ],
+
           boton: "enviar",
         },
       ],
       seccionFooter: [
         {
           tituloImagen: tituloSeccionFooter,
-          
         },
       ],
     },
@@ -108,12 +115,11 @@ const InfoContextProvider = ({ children }) => {
   const infoHomeArray = Object.values(informacion[0].seccionHome);
   const infoContadorArray = Object.values(informacion[0].seccionContador);
   const infoSobreBodaArray = Object.values(informacion[0].seccionSobreBoda);
-  const infoDressCodeArray = Object.values(informacion[0]. seccionDressCode);
+  const infoDressCodeArray = Object.values(informacion[0].seccionDressCode);
   const infoCarouselArray = Object.values(informacion[0].seccionCarousel);
   const infoRegalosArray = Object.values(informacion[0].seccionRegalos);
   const infoFormArray = Object.values(informacion[0].seccionForm);
   const infoFooterArray = Object.values(informacion[0].seccionFooter);
-
 
   const values = {
     infoHomeArray,

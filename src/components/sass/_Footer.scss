@@ -1,0 +1,13 @@
+.mobile-footer {
+  text-align: center;
+  background-color: $Secundario-naranja;
+  padding: 25px 10px;
+  .contenedor-imagen {
+    width: 50vw;
+    margin: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
