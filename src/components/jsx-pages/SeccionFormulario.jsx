@@ -14,23 +14,23 @@ const SeccionFormulario = () => {
           <div className="regalos-textos">
             <p>{info.titulo}</p>
           </div>
-
-          <form className="inputs-container">
-            {info.inputs.map((input) => (
-              <div>
-                <label htmlFor="text"></label>
-                <input type="text" 
-                placeholder= {input.input}
-                />
-              </div>
-            ))}
-          </form>
-
-          <div>
-            <button>{info.boton}</button>
-          </div>
         </div>
       ))}
+      <form className="inputs-container">
+        <label htmlFor="text"></label>
+        <input required type="text" placeholder="Nombre y Apellido" />
+        <label htmlFor="single-select"></label>
+        <select required id="single-select" placeholder="¿Asistirás?">
+          <option value="">¿Asistirás?</option>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+        <label htmlFor="text"></label>
+        <textarea type="textarea" id="name" placeholder="Mensaje" required />
+      </form>
+      <div>
+        <button>enviar</button>
+      </div>
     </>
   );
 };

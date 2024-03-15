@@ -89,9 +89,10 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionForm,
           titulo: "Es muy importante para nosotros que confirmes tu presencia",
-          inputs: [
+         /*  inputs: [
             {
               input: "Nombre y Apellido",
+              label
             },
             {
               input: "¿Asistirás?",
@@ -99,7 +100,7 @@ const InfoContextProvider = ({ children }) => {
             {
               input: "Escribe tu mensaje",
             },
-          ],
+          ], */
 
           boton: "enviar",
         },
