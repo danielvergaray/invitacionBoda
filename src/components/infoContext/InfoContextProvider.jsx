@@ -18,16 +18,11 @@ const InfoContextProvider = ({ children }) => {
       seccionHome: [
         {
           imagen1: imagenHome1,
-        },
-        {
           imagen2: imagenHome2,
-        },
-        {
           tituloImagenPortada: tituloImagenPortada,
-        },
-        {
           fecha: "29.06.24",
         },
+     
       ],
       seccionContador: [
         {

@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
+import imagenHome2 from "../../assets/imagenes/FONDO_02.png";
 import InfoContext from "../infoContext/InfoContext";
 import SobreLaBoda from "./SobreLaBoda";
 import DressCode from "./DressCode";
@@ -11,12 +12,23 @@ import SeccionContador from "./SeccionContador";
 const Home = () => {
   const { infoHomeArray } = useContext(InfoContext);
 
+  const [fondoInicio, setFondoInicio] = useState(true);
+
+  useEffect(() => {
+    const tiempoDeCarga = setTimeout(() => {
+      setFondoInicio(false);
+    }, 2000);
+    return () => clearTimeout(tiempoDeCarga);
+  }, []);
+
   return (
     <>
       <section
         className="mobile-home-hero"
         style={{
-          backgroundImage: `url(${imagenHome1})`,
+          backgroundImage: fondoInicio
+            ? `url(${imagenHome1})`
+            : `url(${imagenHome2})`,
         }}
       >
         <div className="hero-titulo">

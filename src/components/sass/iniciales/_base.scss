@@ -2,18 +2,22 @@
 @import "../reutilizables/Tipografias";
 
 body {
+  font-family: "NEUEHAAS";
   .mobile-sobreBoda,
   .mobile-home-contador,
   .mobile-dressCode,
   .mobile-carousel,
   .mobile-regalos,
   .mobile-formulario {
-    padding: 50px 30px;
+    padding:  60px 10vw;
 
     p {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: $Textos-negro-claro;
+      line-height: 20px;
+      width: 67vw;
+      margin: auto;
     }
   }
 
@@ -23,12 +27,13 @@ body {
 
     .dressCode-textos,
     .regalos-textos {
-      padding: 15px 0 30px;
+      padding: 20px 0 30px;
       h3:nth-child(2) {
         padding: 5px 0;
       }
       h3 {
         letter-spacing: 2px;
+        font-weight: bold;
       }
       p{
         line-height: 20px;
@@ -69,13 +74,14 @@ body {
     text-transform: uppercase;
     font-weight: 100;
     color: $Principal-blanco;
-    font-size: 10px;
+    font-size: 8px;
     text-transform: uppercase;
+    letter-spacing: 3px;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: "Cherolina";
-    font-weight: 700;
+    font-weight: 500;
   }
 
   h2 {
@@ -85,8 +91,9 @@ body {
   }
   h3 {
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 10px;
+    font-weight: 700;
+    font-size: 8px;
     color: $Textos-negro;
+    letter-spacing: 2px;
   }
 }

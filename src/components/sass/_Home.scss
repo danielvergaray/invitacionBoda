@@ -6,7 +6,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-
+    transition: background-image 1s ease;
     .hero-titulo {
       width: 70vw;
       padding-top: 20vh;
@@ -21,9 +21,13 @@
       text-align: center;
 
       p {
-        font-size: 1.5rem;
+        font-size: 0.7rem;
+        font-weight: 100;
         color: $Principal-blanco;
         padding-left: 25vw;
+        font-family: "NEUEHAAS";
+        letter-spacing: 5px;
+        word-spacing: 5px;
       }
     }
   }
@@ -31,18 +35,10 @@
   .mobile-home-contador {
     text-align: center;
 
-    /* .contenedor-imagen {
-      width: 80vw;
-      margin: auto;
-      img {
-        width: 20%;
-      }
-    } */
-
     .contador-titulo {
       padding-bottom: 10px;
       font-weight: 100;
-      width: 90%;
+      width: 100%;
       margin: auto;
       letter-spacing: 5px;
       line-height: 20px;
@@ -50,39 +46,44 @@
     }
 
     .contador-subtitulo {
-      padding-bottom: 50px;
-
+      padding-bottom: 30px;
+      h2 {
+        font-size: 1rem;
+      }
       span {
         color: $Textos-negro-claro;
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
 
     .home-cuentaRegresiva {
-      padding: 0 20px;
+      padding: 0;
       display: flex;
       justify-content: center;
-      overflow-x: hidden;
+      
       div {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
 
         .contador-recuadro {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 100px;
+          width: fit-content;
+          padding: 10px;
 
           .contador-recuadro-numero {
             width: 100%;
 
             .contador-recuadro-digito {
-              width: 100%;
+              width: fit-content;
               padding: 0;
 
               p {
                 font-size: 2.5rem;
-                padding-left: 3vw;
+                /*  padding-left: 3vw; */
+                font-family: "NT-SEAWAVE";
               }
             }
             .contador-recuadro-span {
@@ -129,15 +130,7 @@
 
   .mobile-sobreBoda {
     background-color: $Principal-gris-claro;
-
-    /*  .contenedor-imagen {
-      width: 50vw;
-      margin: auto;
-
-      img {
-        width: 100%;
-      }
-    } */
+    padding-bottom: 0 !important;
 
     .sobreBoda-subtitulo {
       text-align: center;
@@ -153,7 +146,8 @@
           grid-column: 1;
           text-align: right;
           p:nth-child(1) {
-            font-size: 5rem;
+            font-size: 4rem;
+            font-family: "NT-SEAWAVE";
           }
         }
         .sobreBoda-span {
@@ -171,7 +165,8 @@
           grid-column: 3;
 
           p:nth-child(1) {
-            font-size: 5rem;
+            font-size: 4rem;
+            font-family: "NT-SEAWAVE";
           }
         }
       }
@@ -187,24 +182,20 @@
           } */
         }
       }
+
+      p {
+        font-size: 1rem;
+        font-weight: 100;
+      }
     }
   }
 
   .mobile-dressCode {
-    /* text-align: center; */
     background-color: $Principal-gris-claro;
-    /* .dressCode-textos {
-      padding: 20px 0 30px;
-      h3:nth-child(2) {
-        padding: 5px 0;
-      }
-      h3 {
-        letter-spacing: 2px;
-      }
-    } */
   }
   .mobile-carousel {
     overflow-x: hidden;
+    padding-bottom: 0 !important;
     p {
       padding: 10px 0 25px;
     }
@@ -219,15 +210,14 @@
       }
     }
   }
-  /* .mobile-regalos{
 
-  } */
   .mobile-formulario {
     background-color: $Principal-gris-claro;
 
     .inputs-container {
       padding: 20px 0;
-      input, textarea {
+      input,
+      textarea {
         width: 100%;
         padding: 10px;
         border: none;
@@ -242,11 +232,10 @@
         border: none;
         margin: 7px 0;
       }
-      textarea{
+      textarea {
         height: 80px;
         text-align: left;
       }
-     
     }
   }
 }

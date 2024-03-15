@@ -26,7 +26,7 @@ const SeccionFormulario = () => {
           <option value="No">No</option>
         </select>
         <label htmlFor="text"></label>
-        <textarea type="textarea" id="name" placeholder="Mensaje" required />
+        <textarea type="textarea" id="name" placeholder="Escribe tu mensaje" required />
       </form>
       <div>
         <button>enviar</button>
