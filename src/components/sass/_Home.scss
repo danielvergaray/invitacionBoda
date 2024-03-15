@@ -8,7 +8,7 @@
     height: 100vh;
     transition: background-image 1s ease;
     .hero-titulo {
-      width: 70vw;
+      width: 80%;
       padding-top: 20vh;
       margin: auto;
 
@@ -21,10 +21,10 @@
       text-align: center;
 
       p {
-        font-size: 0.7rem;
-        font-weight: 100;
+        font-size: 0.8rem;
+        font-weight: 400;
         color: $Principal-blanco;
-        padding-left: 25vw;
+        padding-left: 40%;
         font-family: "NEUEHAAS";
         letter-spacing: 5px;
         word-spacing: 5px;
@@ -58,35 +58,39 @@
 
     .home-cuentaRegresiva {
       padding: 0;
-      display: flex;
-      justify-content: center;
-      
+
       div {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-
+        width: 100%;
         .contador-recuadro {
           display: flex;
           flex-direction: column;
           align-items: center;
           width: fit-content;
           padding: 10px;
+          height: fit-content;
 
           .contador-recuadro-numero {
-            width: 100%;
+            width: fit-content;
+            height: fit-content;
 
             .contador-recuadro-digito {
               width: fit-content;
+              height: 50px;
               padding: 0;
 
               p {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
                 /*  padding-left: 3vw; */
                 font-family: "NT-SEAWAVE";
+                width: fit-content;
+                margin: 0;
+
               }
             }
-            .contador-recuadro-span {
+            /* .contador-recuadro-span {
               padding-left: 5vw;
               width: 100%;
               span {
@@ -96,13 +100,13 @@
                 display: block;
                 margin: auto;
               }
-            }
+            } */
           }
           .contador-texto {
-            margin-top: 5px;
+            margin-top: 10px;
             button {
               font-size: 12px;
-              padding: 5px 8px;
+              padding: 5px 20px;
               font-weight: 100;
               text-transform: lowercase;
               font-size: 0.7rem;
@@ -217,7 +221,7 @@
     .inputs-container {
       padding: 20px 0;
       input,
-      textarea {
+      textarea, select {
         width: 100%;
         padding: 10px;
         border: none;

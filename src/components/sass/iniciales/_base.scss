@@ -9,14 +9,14 @@ body {
   .mobile-carousel,
   .mobile-regalos,
   .mobile-formulario {
-    padding:  60px 10vw;
+    padding:  60px 4vw;
 
     p {
       text-align: center;
       font-size: 1.25rem;
       color: $Textos-negro-claro;
-      line-height: 20px;
-      width: 67vw;
+    /*   line-height: 20px; */
+      /* width: 67vw; */
       margin: auto;
     }
   }
@@ -45,7 +45,7 @@ body {
   .mobile-dressCode,
   .mobile-regalos, .mobile-formulario {
     .contenedor-imagen {
-      width: 50vw;
+      width: 80%;
       margin: auto;
 
       img {
@@ -58,11 +58,11 @@ body {
   .mobile-home-contador,
   .mobile-carousel {
     .contenedor-imagen {
-      width: 80vw;
+      width: 100%;
       margin: auto;
       text-align: center;
       img {
-        width: 20%;
+        width: 30%;
       }
     }
   }
@@ -74,12 +74,12 @@ body {
     text-transform: uppercase;
     font-weight: 100;
     color: $Principal-blanco;
-    font-size: 8px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
   h1 {
-    font-size: 2.8rem;
+    font-size: 4rem;
     font-family: "Cherolina";
     font-weight: 500;
   }
@@ -92,7 +92,7 @@ body {
   h3 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 8px;
+    font-size: 10px;
     color: $Textos-negro;
     letter-spacing: 2px;
   }

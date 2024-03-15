@@ -62,9 +62,9 @@ const CuentaRegresiva = () => {
             </p>
           </div>
 
-          <div className="contador-recuadro-span">
+          {/* <div className="contador-recuadro-span">
             <span></span>
-          </div>
+          </div> */}
         </div>
 
         <div className="contador-texto">
