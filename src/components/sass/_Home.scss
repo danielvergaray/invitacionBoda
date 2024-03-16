@@ -5,8 +5,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    transition: background-image 1s ease;
+   
     .hero-titulo {
       width: 80%;
       padding-top: 20vh;
@@ -30,6 +29,16 @@
         word-spacing: 5px;
       }
     }
+  }
+  .primera-imagen{
+    height: 100vh;
+    /* transition: background-image 1s ease; */
+    background-image: url('./assets/imagenes/FONDO_01.png');
+  }
+  .segunda-imagen{
+    height: 100vh;
+    transition: background-image 1s ease;
+    background-image: url('./assets/imagenes/FONDO_02.png');
   }
 
   .mobile-home-contador {

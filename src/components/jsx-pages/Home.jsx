@@ -24,12 +24,12 @@ const Home = () => {
   return (
     <>
       <section
-        className="mobile-home-hero"
-        style={{
+        className={`mobile-home-hero ${fondoInicio ? 'primera-imagen' : 'segunda-imagen'}`}
+        /* style={{
           backgroundImage: fondoInicio
             ? `url(${imagenHome1})`
             : `url(${imagenHome2})`,
-        }}
+        }} */
       >
         <div className="hero-titulo">
           {infoHomeArray.map((info, index) => (
