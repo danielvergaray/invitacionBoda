@@ -5,7 +5,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-image 1s ease; // Aplicamos la transición aquí
+    background-image: url('./assets/imagenes/FONDO_01.png');
+    height: 100vh;
     .hero-titulo {
       width: 80%;
       padding-top: 20vh;
@@ -30,14 +31,14 @@
       }
     }
   }
-  .primera-imagen{
+/*   .primera-imagen{
     height: 100vh;
-    /* transition: background-image 1s ease; */
+   
     background-image: url('./assets/imagenes/FONDO_01.png');
-  }
+  } */
   .segunda-imagen{
     height: 100vh;
-/*     transition: background-image 1s ease; */
+    transition: background-image 1s ease;
     background-image: url('./assets/imagenes/FONDO_02.png');
   }
 

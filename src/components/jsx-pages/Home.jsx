@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
 import imagenHome2 from "../../assets/imagenes/FONDO_02.png";
 import InfoContext from "../infoContext/InfoContext";
@@ -14,15 +14,10 @@ const Home = () => {
 
   const [fondoInicio, setFondoInicio] = useState(true);
 
-// Pre-cargar la segunda imagen de fondo
-useEffect(() => {
-  const segundaImagen = new Image();
-  segundaImagen.src = '../../assets/imagenes/FONDO_02.png';
-}, []);
-
+  let tiempoDeCarga= useRef();
 
   useEffect(() => {
-    const tiempoDeCarga = setTimeout(() => {
+    tiempoDeCarga = setTimeout(() => {
       setFondoInicio(false);
     }, 2000);
     return () => clearTimeout(tiempoDeCarga);
@@ -31,7 +26,7 @@ useEffect(() => {
   return (
     <>
       <section
-         className={`mobile-home-hero ${fondoInicio ? 'primera-imagen' : 'segunda-imagen'}`}
+        className={`mobile-home-hero ${fondoInicio ? "mobile-home-hero"   : 'segunda-imagen'}`}
         /* style={{
           backgroundImage: fondoInicio
             ? `url(${imagenHome1})`
