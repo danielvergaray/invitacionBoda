@@ -5,7 +5,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-   
+    background-image: url("./assets/imagenes/FONDO_01.png");
+    height: 100vh;
     .hero-titulo {
       width: 80%;
       padding-top: 20vh;
@@ -30,15 +31,38 @@
       }
     }
   }
-  .primera-imagen{
-    height: 100vh;
-    /* transition: background-image 1s ease; */
-    background-image: url('./assets/imagenes/FONDO_01.png');
-  }
-  .segunda-imagen{
+
+  .segunda-imagen {
     height: 100vh;
     transition: background-image 1s ease;
-    background-image: url('./assets/imagenes/FONDO_02.png');
+    background-image: url("./assets/imagenes/FONDO_02.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .hero-titulo {
+      width: 80%;
+      padding-top: 20vh;
+      margin: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .hero-fecha {
+      text-align: center;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: $Principal-blanco;
+        padding-left: 40%;
+        font-family: "NEUEHAAS";
+        letter-spacing: 5px;
+        word-spacing: 5px;
+      }
+    }
   }
 
   .mobile-home-contador {
@@ -96,7 +120,6 @@
                 font-family: "NT-SEAWAVE";
                 width: fit-content;
                 margin: 0;
-
               }
             }
             /* .contador-recuadro-span {
@@ -230,7 +253,8 @@
     .inputs-container {
       padding: 20px 0;
       input,
-      textarea, select {
+      textarea,
+      select {
         width: 100%;
         padding: 10px;
         border: none;

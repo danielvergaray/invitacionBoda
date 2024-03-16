@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <>
       <section
-        className={`mobile-home-hero ${fondoInicio ? 'primera-imagen' : 'segunda-imagen'}`}
+        className={fondoInicio ? "mobile-home-hero"   : 'segunda-imagen'}
         /* style={{
           backgroundImage: fondoInicio
             ? `url(${imagenHome1})`
