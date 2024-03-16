@@ -14,6 +14,13 @@ const Home = () => {
 
   const [fondoInicio, setFondoInicio] = useState(true);
 
+// Pre-cargar la segunda imagen de fondo
+useEffect(() => {
+  const segundaImagen = new Image();
+  segundaImagen.src = '../../assets/imagenes/FONDO_02.png';
+}, []);
+
+
   useEffect(() => {
     const tiempoDeCarga = setTimeout(() => {
       setFondoInicio(false);
@@ -24,7 +31,7 @@ const Home = () => {
   return (
     <>
       <section
-        className={fondoInicio ? "mobile-home-hero"   : 'segunda-imagen'}
+         className={`mobile-home-hero ${fondoInicio ? 'primera-imagen' : 'segunda-imagen'}`}
         /* style={{
           backgroundImage: fondoInicio
             ? `url(${imagenHome1})`
