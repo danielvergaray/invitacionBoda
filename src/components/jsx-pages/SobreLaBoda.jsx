@@ -33,8 +33,8 @@ const SobreLaBoda = () => {
               <h3>{info.subtitulo2}</h3>
 
               <div className="sobreBoda-lugar-ubicacion">
-                <p>{info.direccion}</p>
-                <p>{info.distrito}</p>
+                <h2>{info.direccion}</h2>
+                <h2>{info.distrito}</h2>
               </div>
               <div>
                 <button>{info.boton}</button>

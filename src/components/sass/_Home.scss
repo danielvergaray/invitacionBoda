@@ -9,8 +9,9 @@
     height: 100vh;
     .hero-titulo {
       width: 80%;
-      padding-top: 20vh;
+      padding-top: 70px;
       margin: auto;
+      max-width: 400px;
 
       img {
         width: 100%;
@@ -58,11 +59,11 @@
     .contador-subtitulo {
       padding-bottom: 30px;
       h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
       span {
         color: $Textos-negro-claro;
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -160,7 +161,7 @@
           grid-column: 1;
           text-align: right;
           p:nth-child(1) {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-family: "NT-SEAWAVE";
           }
         }
@@ -179,7 +180,7 @@
           grid-column: 3;
 
           p:nth-child(1) {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-family: "NT-SEAWAVE";
           }
         }
@@ -206,6 +207,10 @@
 
   .mobile-dressCode {
     background-color: $Principal-gris-claro;
+
+    p{
+      padding-bottom: 10px;
+    }
   }
   .mobile-carousel {
     overflow-x: hidden;
@@ -219,8 +224,9 @@
       overflow-x: scroll;
 
       img {
-        width: 50vw;
+        width: 80vw;
         padding: 0 5px;
+        margin: 0;
       }
     }
   }
@@ -236,6 +242,7 @@
         padding: 10px;
         border: none;
         margin: 7px 0;
+        font-size: 1.5rem;
       }
       select {
         width: 100%;

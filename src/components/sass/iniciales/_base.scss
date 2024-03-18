@@ -13,7 +13,7 @@ body {
 
     p {
       text-align: center;
-      font-size: 1.25rem;
+      font-size: 2rem;
       color: $Textos-negro-claro;
     /*   line-height: 20px; */
       /* width: 67vw; */
@@ -36,7 +36,7 @@ body {
         font-weight: bold;
       }
       p{
-        line-height: 20px;
+        line-height: 28px;
       }
     }
   }
@@ -45,7 +45,7 @@ body {
   .mobile-dressCode,
   .mobile-regalos, .mobile-formulario {
     .contenedor-imagen {
-      width: 80%;
+      width: 90%;
       margin: auto;
 
       img {
@@ -74,12 +74,12 @@ body {
     text-transform: uppercase;
     font-weight: 100;
     color: $Principal-blanco;
-    font-size: 12px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
-  h1 {
-    font-size: 4rem;
+  h1 { /* Titulo contador */
+    font-size: 5rem;
     font-family: "Cherolina";
     font-weight: 500;
   }
@@ -87,12 +87,12 @@ body {
   h2 {
     color: $Textos-negro-claro;
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   h3 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 1rem;
     color: $Textos-negro;
     letter-spacing: 2px;
   }
