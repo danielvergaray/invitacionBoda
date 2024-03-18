@@ -15,8 +15,8 @@ const SeccionCarousel = () => {
           </div>
 
           <div className="carousel-contenedor">
-            {info.carouselImagenes.map((imagen)=>(
-              <img src={imagen.imagenCarousel} alt="" />
+            {info.carouselImagenes.map((imagen, index)=>(
+              <img key={index} src={imagen.imagenCarousel} alt="" />
             ))}
             
           </div>
