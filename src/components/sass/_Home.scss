@@ -1,12 +1,23 @@
 @import "/src/components/sass/reutilizables/colors";
 
 @media (max-width: 846px) {
+  .mobile-home-hero-fondo1 {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("./assets/imagenes/FONDO_01.png");
+  }
+
   .mobile-home-hero {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('./assets/imagenes/FONDO_01.png');
+    background-image: url("./assets/imagenes/FONDO_02.png");
     height: 100vh;
+    position: absolute;
+    top: 0;
+
     .hero-titulo {
       width: 80%;
       padding-top: 70px;
@@ -32,15 +43,11 @@
       }
     }
   }
-/*   .primera-imagen{
-    height: 100vh;
-   
-    background-image: url('./assets/imagenes/FONDO_01.png');
-  } */
-  .segunda-imagen{
+  
+  .segunda-imagen {
     height: 100vh;
     transition: background-image 1s ease;
-    background-image: url('./assets/imagenes/FONDO_02.png');
+    background-image: url("./assets/imagenes/FONDO_02.png");
   }
 
   .mobile-home-contador {
@@ -98,7 +105,6 @@
                 font-family: "NT-SEAWAVE";
                 width: fit-content;
                 margin: 0;
-
               }
             }
             /* .contador-recuadro-span {
@@ -116,12 +122,10 @@
           .contador-texto {
             margin-top: 10px;
             p {
-            
-             /*  padding: 5px 20px; */
+              /*  padding: 5px 20px; */
               font-weight: bolder;
               text-transform: lowercase;
               font-size: 0.7rem;
-            
             }
           }
         }
@@ -209,7 +213,7 @@
   .mobile-dressCode {
     background-color: $Principal-gris-claro;
 
-    p{
+    p {
       padding-bottom: 10px;
     }
   }
@@ -238,7 +242,8 @@
     .inputs-container {
       padding: 20px 0 0;
       input,
-      textarea, select {
+      textarea,
+      select {
         width: 100%;
         padding: 10px;
         border: none;
@@ -253,12 +258,13 @@
         padding-left: 5px;
         border: none;
         margin: 7px 0;
+        border-radius: 0;
       }
       textarea {
         height: 140px;
         text-align: left;
       }
-      button{
+      button {
         margin-top: 20px;
       }
     }

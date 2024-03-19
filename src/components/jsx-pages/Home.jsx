@@ -8,32 +8,40 @@ import SeccionRegalos from "./SeccionRegalos";
 import SeccionFormulario from "./SeccionFormulario";
 import SeccionCarousel from "./SeccionCarousel";
 import SeccionContador from "./SeccionContador";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const { infoHomeArray } = useContext(InfoContext);
 
   const [fondoInicio, setFondoInicio] = useState(true);
 
-  let tiempoDeCarga= useRef();
+  let tiempoDeCarga = useRef();
 
-  useEffect(() => {
+  /* useEffect(() => {
     tiempoDeCarga = setTimeout(() => {
       setFondoInicio(false);
     }, 2000);
     return () => clearTimeout(tiempoDeCarga);
-  }, []);
+  }, []); */
+
+  useEffect(() => {
+    Aos.init();
+  }, [{ duration: 100 }]);
 
   return (
     <>
-      <section
-        className={`mobile-home-hero ${fondoInicio ? "mobile-home-hero"   : 'segunda-imagen'}`}
-        /* style={{
-          backgroundImage: fondoInicio
-            ? `url(${imagenHome1})`
-            : `url(${imagenHome2})`,
-        }} */
-      >
-        <div className="hero-titulo">
+      <section className="mobile-home-hero-fondo1"></section>
+      <section className="mobile-home-hero"
+      data-aos-easing="linear"
+      data-aos="fade-up"
+      data-aos-duration="500">
+        <div
+          className="hero-titulo"
+          data-aos-easing="linear"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
               <img
@@ -44,7 +52,12 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <div className="hero-fecha">
+        <div
+          className="hero-fecha"
+          data-aos-easing="linear"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
               <p>{info.fecha} </p>
