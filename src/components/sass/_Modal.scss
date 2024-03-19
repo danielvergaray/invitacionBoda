@@ -1,0 +1,35 @@
+@import "/src/components/sass/reutilizables/colors";
+
+.modal-open {
+  .modal {
+    .modal-dialog {
+      .modal-content {
+        background-color: $Principal-gris-claro;
+        border: none;
+
+        .modal-header {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          
+          .modal-title {
+            grid-column: 1;
+            display: flex;
+            justify-content: flex-end;
+            svg {
+                color: $Secundario-naranja;
+                font-size: 2rem;
+            }
+          }
+          button {
+            grid-column: 2;
+            font-size: 1rem;
+          }
+        }
+        .modal-body{
+            background-color: $Secundario-naranja;
+            font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

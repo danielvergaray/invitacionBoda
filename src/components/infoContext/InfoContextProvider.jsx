@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InfoContext from "./InfoContext";
 import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
 import imagenHome2 from "../../assets/imagenes/FONDO_02.png";
@@ -11,6 +11,14 @@ import tituloSeccionRegalos from "../../assets/imagenes/titulos/LOSREGALOS.png";
 import tituloSeccionForm from "../../assets/imagenes/titulos/NOSACOMPANAS.png";
 import tituloSeccionFooter from "../../assets/imagenes/titulos/LOSESPERAMOS.png";
 import imagenCarousel1 from "../../assets/imagenes/carousel/Carousel-img-1.jpeg";
+import {
+  getFirestore,
+  collection,
+  query,
+  getDocs,
+  where,
+  updateDoc,
+} from "firebase/firestore";
 
 const InfoContextProvider = ({ children }) => {
   const informacion = [
@@ -22,7 +30,6 @@ const InfoContextProvider = ({ children }) => {
           tituloImagenPortada: tituloImagenPortada,
           fecha: "29.06.24",
         },
-     
       ],
       seccionContador: [
         {
@@ -84,7 +91,7 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionForm,
           titulo: "Es muy importante para nosotros que confirmes tu presencia",
-         /*  inputs: [
+          /*  inputs: [
             {
               input: "Nombre y Apellido",
               label
@@ -117,6 +124,85 @@ const InfoContextProvider = ({ children }) => {
   const infoFormArray = Object.values(informacion[0].seccionForm);
   const infoFooterArray = Object.values(informacion[0].seccionFooter);
 
+  /* FORMULARIO */
+
+  const [loading, setLoading] = useState(false);
+  const [userData, setUserData] = useState({
+    nombre: "",
+    respuesta: "",
+    mensaje: "",
+  });
+
+  const getUserData = (event) => {
+    setUserData({
+      ...userData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const [invitadoRegistrado, setInvitadoRegistrado] = useState("");
+
+  const handleEnviar = (event) => {
+    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+    setLoading(true);
+    const db = getFirestore();
+
+    // Convertir el nombre a minúsculas
+    const nombreMinusculas = userData.nombre.toLowerCase().split(" ").join("");
+
+    /******************  OBTENCION DE INVITADOS DESDE FIREBASE */
+
+    // Verificar si el nombre ya está registrado en Firebase
+
+    const invitadosFirebase = collection(db, "invitados");
+    const buscarInvitado = query(
+      invitadosFirebase,
+      where("nombre", "==", nombreMinusculas)
+    );
+    getDocs(buscarInvitado)
+      .then((querySnapshot) => {
+        if (!querySnapshot.empty) {
+          // Si el nombre ya está registrado
+          const docRef = querySnapshot.docs[0].ref; //accede al primer documento devuelto en la consulta y devuelve una referencia del documento.
+          const existingData = querySnapshot.docs[0].data(); //evuelve los datos del documento en forma de objeto
+
+          if (existingData.respuesta) {
+            //Verifica que el invitado ya haya respondido anteriormente
+            console.log("Este invitado ya ha respondido anteriormente");
+            setInvitadoRegistrado("repetido");
+            // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
+          } else {
+            // Actualizar la respuesta del invitado
+            console.log("Respuesta actualizada correctamente en Firebase");
+            setInvitadoRegistrado("si");
+            return updateDoc(docRef, { respuesta: userData.respuesta });
+          }
+        } else {
+          // Si el nombre no está registrado
+          setInvitadoRegistrado("no");
+          console.log(
+            "Lo siento, su nombre no se encuentra en la lista de invitados"
+          );
+          // Aquí podrías mostrar un mensaje al usuario indicando que su nombre no está en la lista
+        }
+      })
+
+      .then(() => {
+        // Limpiar los campos después de enviar
+        setUserData({
+          nombre: "",
+          respuesta: "",
+          mensaje: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error al enviar datos a Firebase: ", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const values = {
     infoHomeArray,
     infoContadorArray,
@@ -126,6 +212,12 @@ const InfoContextProvider = ({ children }) => {
     infoRegalosArray,
     infoFormArray,
     infoFooterArray,
+    loading,
+    getUserData,
+    handleEnviar,
+    userData,
+    invitadoRegistrado,
+    setInvitadoRegistrado
   };
 
   return (

@@ -1,88 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  getFirestore,
-  collection,
-  query,
-  getDocs,
-  where,
-  updateDoc,
-} from "firebase/firestore";
 import InfoContext from "../infoContext/InfoContext";
+import PopUpModal from "../modal/PopUpModal";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SeccionFormulario = () => {
-  const { infoFormArray } = useContext(InfoContext);
+  const { infoFormArray, loading, getUserData, handleEnviar, userData } =
+    useContext(InfoContext);
 
-  const [loading, setLoading] = useState(false);
-  const [userData, setUserData] = useState({
-    nombre: "",
-    respuesta: "",
-    mensaje: "",
-  });
-
-  const getUserData = (event) => {
-    setUserData({
-      ...userData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleEnviar = (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-    setLoading(true);
-    const db = getFirestore();
-
-    // Convertir el nombre a minúsculas
-    const nombreMinusculas = userData.nombre.toLowerCase().split(" ").join("");
-
-    /******************  OBTENCION DE INVITADOS DESDE FIREBASE */
-
-    // Verificar si el nombre ya está registrado en Firebase
-
-    const invitadosFirebase = collection(db, "invitados");
-    const buscarInvitado = query(
-      invitadosFirebase,
-      where("nombre", "==", nombreMinusculas)
-    );
-    getDocs(buscarInvitado)
-      .then((querySnapshot) => {
-        if (!querySnapshot.empty) {
-          // Si el nombre ya está registrado
-          const docRef = querySnapshot.docs[0].ref; //accede al primer documento devuelto en la consulta y devuelve una referencia del documento.
-          const existingData = querySnapshot.docs[0].data(); //evuelve los datos del documento en forma de objeto
-
-          if (existingData.respuesta) {
-            //Verifica que el invitado ya haya respondido anteriormente
-            console.log("Este invitado ya ha respondido anteriormente");
-            // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
-          } else {
-            // Actualizar la respuesta del invitado
-            return updateDoc(docRef, { respuesta: userData.respuesta });
-          }
-        } else {
-          // Si el nombre no está registrado
-          console.log(
-            "Lo siento, su nombre no se encuentra en la lista de invitados"
-          );
-          // Aquí podrías mostrar un mensaje al usuario indicando que su nombre no está en la lista
-        }
-      })
-
-      .then(() => {
-        // Limpiar los campos después de enviar
-        setUserData({
-          nombre: "",
-          respuesta: "",
-          mensaje: "",
-        });
-        console.log("Respuesta actualizada correctamente en Firebase");
-      })
-      .catch((error) => {
-        console.error("Error al enviar datos a Firebase: ", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+    const [abrirPopUp, setAbrirPopUp]= useState(false);
+    const [show, setShow] = useState(false);
+    
+    const funcionAbrirPopUp = () => {
+      setTimeout(() => {
+        setAbrirPopUp(true);
+        setShow(true);
+      }, 2000); // Mostrar el modal después de 3 segundos
+    };
 
   return (
     <>
@@ -127,9 +60,12 @@ const SeccionFormulario = () => {
           onChange={getUserData}
           required
         />
-        <button type="submit" disabled={loading}>
+        <button onClick={funcionAbrirPopUp} type="submit" disabled={loading}>
           {loading ? "Enviando..." : "Enviar"}
         </button>
+        {
+          abrirPopUp && <PopUpModal show= {show} setShow={setShow} />
+        }
       </form>
     </>
   );

@@ -236,7 +236,7 @@
     background-color: $Principal-gris-claro;
 
     .inputs-container {
-      padding: 20px 0;
+      padding: 20px 0 0;
       input,
       textarea, select {
         width: 100%;
@@ -258,8 +258,8 @@
         height: 140px;
         text-align: left;
       }
-      div{
-        padding-top: 20px;
+      button{
+        margin-top: 20px;
       }
     }
   }
