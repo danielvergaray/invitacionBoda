@@ -37,12 +37,14 @@ const Home = () => {
         data-aos-easing="linear"
         data-aos="fade-up"
         data-aos-duration="2000"
+        
       >
         <div
           className="hero-titulo"
           data-aos-easing="linear"
           data-aos="fade-up"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
+          data-aos-delay="2000"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
@@ -58,7 +60,8 @@ const Home = () => {
           className="hero-fecha"
           data-aos-easing="linear"
           data-aos="fade-up"
-          data-aos-duration="3500"
+          data-aos-duration="2000"
+          data-aos-delay="2000"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
