@@ -32,15 +32,17 @@ const Home = () => {
   return (
     <>
       <section className="mobile-home-hero-fondo1"></section>
-      <section className="mobile-home-hero"
-      data-aos-easing="linear"
-      data-aos="fade-up"
-      data-aos-duration="500">
+      <section
+        className="mobile-home-hero"
+        data-aos-easing="linear"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <div
           className="hero-titulo"
           data-aos-easing="linear"
           data-aos="fade-up"
-          data-aos-duration="1500"
+          data-aos-duration="3000"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
@@ -56,7 +58,7 @@ const Home = () => {
           className="hero-fecha"
           data-aos-easing="linear"
           data-aos="fade-up"
-          data-aos-duration="2000"
+          data-aos-duration="3500"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
