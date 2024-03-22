@@ -171,11 +171,16 @@ const InfoContextProvider = ({ children }) => {
             console.log("Este invitado ya ha respondido anteriormente");
             setInvitadoRegistrado("repetido");
             // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
+            return updateDoc(docRef, {respuesta: userData.respuesta,
+              mensaje: userData.mensaje });
           } else {
             // Actualizar la respuesta del invitado
             console.log("Respuesta actualizada correctamente en Firebase");
             setInvitadoRegistrado("si");
-            return updateDoc(docRef, { respuesta: userData.respuesta });
+            return updateDoc(docRef, {
+              respuesta: userData.respuesta,
+              mensaje: userData.mensaje,
+            });
           }
         } else {
           // Si el nombre no está registrado
@@ -203,6 +208,8 @@ const InfoContextProvider = ({ children }) => {
       });
   };
 
+  const [respuestaAsistencia, setRespuestaAsistencia] = useState("");
+
   const values = {
     infoHomeArray,
     infoContadorArray,
@@ -214,10 +221,13 @@ const InfoContextProvider = ({ children }) => {
     infoFooterArray,
     loading,
     getUserData,
-    handleEnviar,
+    setUserData,
     userData,
+    handleEnviar,
     invitadoRegistrado,
-    setInvitadoRegistrado
+    setInvitadoRegistrado,
+    respuestaAsistencia,
+    setRespuestaAsistencia,
   };
 
   return (

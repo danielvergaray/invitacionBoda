@@ -1,21 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import InfoContext from "../infoContext/InfoContext";
 import PopUpModal from "../modal/PopUpModal";
+import PopUpAsistencia from "./PopUpAsistencia";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SeccionFormulario = () => {
-  const { infoFormArray, loading, getUserData, handleEnviar, userData } =
+  const { infoFormArray, loading, getUserData, handleEnviar, userData, respuestaAsistencia } =
     useContext(InfoContext);
 
-    const [abrirPopUp, setAbrirPopUp]= useState(false);
-    const [show, setShow] = useState(false);
-    
-    const funcionAbrirPopUp = () => {
-      setTimeout(() => {
-        setAbrirPopUp(true);
-        setShow(true);
-      }, 2000); // Mostrar el modal después de 3 segundos
-    };
+  const [abrirPopUp, setAbrirPopUp] = useState(false);
+ 
+  const [show, setShow] = useState(false);
+
+  const funcionAbrirPopUp = () => {
+    setTimeout(() => {
+      setAbrirPopUp(true);
+      setShow(true);
+    }, 2000); // Mostrar el modal después de 3 segundos
+  };
+
+  const [popUpAsistencia, setPopUpAsistencia] = useState(false);
+
+  const abrirPopUpAsistencia = () => {
+    setPopUpAsistencia(true);
+  };
 
   return (
     <>
@@ -41,7 +49,7 @@ const SeccionFormulario = () => {
         />
 
         <label htmlFor="respuesta"></label>
-        <select
+      {/*   <select
           name="respuesta"
           value={userData.respuesta}
           onChange={getUserData}
@@ -50,7 +58,21 @@ const SeccionFormulario = () => {
           <option value="">¿Asistirás?</option>
           <option value="Si">Sí</option>
           <option value="No">No</option>
-        </select>
+        </select> */}
+
+        <input
+          onClick={abrirPopUpAsistencia}
+          placeholder={`¿Asistirás? ${respuestaAsistencia}`}
+          value={userData.respuesta}
+          onChange={getUserData}
+          type="text"
+        />
+
+        {popUpAsistencia ? <PopUpAsistencia 
+        popUpAsistencia = {popUpAsistencia} 
+        setPopUpAsistencia = {setPopUpAsistencia}
+        /> : null}
+
         <label htmlFor="mensaje"></label>
         <textarea
           id="mensaje"
@@ -63,9 +85,7 @@ const SeccionFormulario = () => {
         <button onClick={funcionAbrirPopUp} type="submit" disabled={loading}>
           {loading ? "Enviando..." : "Enviar"}
         </button>
-        {
-          abrirPopUp && <PopUpModal show= {show} setShow={setShow} />
-        }
+        {abrirPopUp && <PopUpModal show={show} setShow={setShow} />}
       </form>
     </>
   );
