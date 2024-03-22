@@ -8,6 +8,8 @@
         border: none;
 
         .modal-header {
+          display: flex;
+          justify-content: center;  
           .modal-title {
             display: flex;
             justify-content: flex-end;
@@ -21,9 +23,18 @@
             font-size: 1rem;
           }
         }
+
+        .popup-imagenRama{
+          margin: auto;
+          padding: 10px 0;
+          img{
+            width: 80px;
+          }
+        }
         .modal-footer {
           display: flex;
           justify-content: center;
+          padding: 16px;
           button {
             background-color: $Secundario-naranja;
             width: 40%;

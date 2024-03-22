@@ -36,7 +36,7 @@
       text-align: center;
 
       p {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 400;
         color: $Principal-blanco;
         padding-left: 40%;
@@ -163,7 +163,7 @@
     }
     .sobreBoda-subtitulo {
       text-align: center;
-      padding: 40px 0 10px;
+      padding: 60px 0 10px;
     }
 
     .sobreBoda-fecha-hora-container {
@@ -239,6 +239,7 @@
     padding-bottom: 0 !important;
     p {
       padding: 10px 0 25px;
+      line-height: 28px;
     }
 
     .carousel-contenedor {
