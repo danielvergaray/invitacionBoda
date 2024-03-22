@@ -34,6 +34,7 @@ body {
       h3 {
         letter-spacing: 2px;
         font-weight: bold;
+        margin: 0;
       }
       p{
         line-height: 28px;
@@ -74,7 +75,7 @@ body {
     text-transform: uppercase;
     font-weight: 100;
     color: $Principal-blanco;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
@@ -88,12 +89,12 @@ body {
   h2 {
     color: $Textos-negro-claro;
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   h3 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: $Textos-negro;
     letter-spacing: 2px;
   }
