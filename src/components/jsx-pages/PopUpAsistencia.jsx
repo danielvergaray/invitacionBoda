@@ -22,9 +22,9 @@ const PopUpAsistencia = ({ popUpAsistencia, setPopUpAsistencia }) => {
 
   return (
     <>
-      <Modal show={popUpAsistencia} onHide={handleClose}>
+      <Modal show={popUpAsistencia} onHide={handleClose} style = {{top: "40vh"}} >
         <Modal.Header>
-          <Modal.Title>¿Asistirás</Modal.Title>
+          <Modal.Title>¿Asistirás?</Modal.Title>
         </Modal.Header>
 
         <Modal.Footer>

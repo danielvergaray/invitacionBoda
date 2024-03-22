@@ -7,6 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("./assets/imagenes/FONDO_01.png");
+    height: 100vh;
+
   }
 
   .mobile-home-hero {
@@ -17,6 +19,7 @@
     height: 100vh;
     position: absolute;
     top: 0;
+    width: 100%;
 
     .hero-titulo {
       width: 80%;
@@ -289,6 +292,41 @@
       }
       button {
         margin-top: 20px;
+      }
+
+      .modal-open {
+        .modal {
+          .modal-dialog {
+            .modal-content {
+              background-color: $Principal-gris-claro;
+              border: none;
+
+              .modal-header {
+                display: grid;
+                grid-template-columns: 50% 50%;
+
+                .modal-title {
+                  grid-column: 1;
+                  display: flex;
+                  justify-content: flex-end;
+                  svg {
+                    color: $Secundario-naranja;
+                    font-size: 2rem;
+                  }
+                }
+                button {
+                  grid-column: 2;
+                  font-size: 1rem;
+                }
+              }
+              .modal-footer {
+                button {
+                  background-color: yellow;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
