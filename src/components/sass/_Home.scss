@@ -20,7 +20,7 @@
 
     .hero-titulo {
       width: 80%;
-      padding-top: 70px;
+      padding-top: 100px;
       margin: auto;
       max-width: 400px;
 
@@ -33,7 +33,7 @@
       text-align: center;
 
       p {
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 400;
         color: $Principal-blanco;
         padding-left: 40%;
@@ -43,7 +43,7 @@
       }
     }
   }
-  
+
   .segunda-imagen {
     height: 100vh;
     transition: background-image 1s ease;
@@ -151,7 +151,13 @@
   .mobile-sobreBoda {
     background-color: $Principal-gris-claro;
     padding-bottom: 0 !important;
-
+    .contenedor-imagen {
+      width: 70%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
     .sobreBoda-subtitulo {
       text-align: center;
       padding: 40px 0 10px;
@@ -214,7 +220,13 @@
 
   .mobile-dressCode {
     background-color: $Principal-gris-claro;
-
+    .contenedor-imagen {
+      width: 60%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
     p {
       padding-bottom: 10px;
     }
@@ -238,6 +250,15 @@
     }
   }
 
+  .mobile-regalos {
+    .contenedor-imagen {
+      width: 60%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
   .mobile-formulario {
     background-color: $Principal-gris-claro;
 
