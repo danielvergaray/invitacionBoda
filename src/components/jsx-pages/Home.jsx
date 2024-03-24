@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
-import imagenHome1 from "../../assets/imagenes/FONDO_01.png";
-import imagenHome2 from "../../assets/imagenes/FONDO_02.png";
+import { ReactTyped } from "react-typed";
 import InfoContext from "../infoContext/InfoContext";
 import SobreLaBoda from "./SobreLaBoda";
 import DressCode from "./DressCode";
@@ -35,7 +34,7 @@ const Home = () => {
       <section
         className="mobile-home-hero"
         data-aos-easing="linear"
-        data-aos="fade-up"
+        data-aos="fade-in"
         data-aos-duration="2000"
         
       >
@@ -43,8 +42,8 @@ const Home = () => {
           className="hero-titulo"
           data-aos-easing="linear"
           data-aos="fade-up"
-          data-aos-duration="2000"
-          data-aos-delay="2000"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
@@ -59,13 +58,19 @@ const Home = () => {
         <div
           className="hero-fecha"
           data-aos-easing="linear"
-          data-aos="fade-up"
+          data-aos="fade-in"
           data-aos-duration="2000"
-          data-aos-delay="2000"
+          data-aos-delay="1500"
         >
           {infoHomeArray.map((info, index) => (
             <div key={index}>
-              <p>{info.fecha} </p>
+              {/* <p>{info.fecha} </p> */}
+              <ReactTyped
+              strings={[`${info.fecha}`]}
+              startWhenVisible
+              typeSpeed={500}
+              
+            />
             </div>
           ))}
         </div>

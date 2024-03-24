@@ -1,21 +1,40 @@
 import React, { useContext } from "react";
 import InfoContext from "../infoContext/InfoContext";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 
 const SobreLaBoda = () => {
   const { infoSobreBodaArray } = useContext(InfoContext);
+
+const animacionEntrada= "fade-in";
+const duracionAnimacion1= "2000";
+const duracionAnimacion2= "2000";
+const duracionAnimacion3= "2000";
 
   return (
     <>
       {infoSobreBodaArray.map((info, index) => (
         <div key={index}>
-          <div className="contenedor-imagen">
+          <div
+            className="contenedor-imagen"
+            data-aos={animacionEntrada}
+            data-aos-duration= {duracionAnimacion1}
+          >
             <img src={info.tituloImagen} alt="" />
           </div>
-          <div className="sobreBoda-subtitulo">
+          <div
+            className="sobreBoda-subtitulo"
+            data-aos={animacionEntrada}
+            data-aos-duration={duracionAnimacion2}
+          >
             <h3>{info.subtitulo}</h3>
           </div>
           <div className="sobreBoda-fecha-hora-container">
-            <div className="sobreBoda-fecha-hora">
+            <div className="sobreBoda-fecha-hora"
+            data-aos={animacionEntrada}
+            data-aos-duration={duracionAnimacion3}
+            >
               <div className="sobreBoda-fecha">
                 <p>{info.dia}</p>
                 <p>{info.mes}</p>

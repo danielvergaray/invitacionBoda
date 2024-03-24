@@ -8,7 +8,6 @@
     background-repeat: no-repeat;
     background-image: url("./assets/imagenes/FONDO_01.png");
     height: 100vh;
-
   }
 
   .mobile-home-hero {
@@ -34,15 +33,22 @@
 
     .hero-fecha {
       text-align: center;
-
-      p {
-        font-size: 1.25rem;
-        font-weight: 400;
-        color: $Principal-blanco;
-        padding-left: 40%;
-        font-family: "NEUEHAAS";
-        letter-spacing: 5px;
-        word-spacing: 5px;
+      div {
+        padding-right: 10px;
+        span {
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: $Principal-blanco;
+          display: flex;
+          justify-content: right;
+          font-family: "NEUEHAAS";
+          letter-spacing: 5px;
+          word-spacing: 5px;
+        }
+        .typed-cursor{
+          position: relative;
+          right: 8px;
+        }
       }
     }
   }
@@ -99,7 +105,7 @@
 
             .contador-recuadro-digito {
               width: fit-content;
-              height: 50px;
+              height: fit-content;
               padding: 0;
 
               p {
@@ -107,6 +113,7 @@
                 /*  padding-left: 3vw; */
                 font-family: "NT-SEAWAVE";
                 width: fit-content;
+                height: 60px;
                 margin: 0;
               }
             }
@@ -124,8 +131,11 @@
           }
           .contador-texto {
             margin-top: 10px;
+            background-color: $Secundario-naranja;
+            border: 1px solid $Secundario-naranja;
+           
             p {
-              /*  padding: 5px 20px; */
+               padding: 5px 10px;
               font-weight: bolder;
               text-transform: lowercase;
               font-size: 0.7rem;
