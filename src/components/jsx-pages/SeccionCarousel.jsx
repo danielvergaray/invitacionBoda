@@ -23,24 +23,7 @@ const SeccionCarousel = () => {
             <p>{info.titulo} </p>
           </div>
 
-          <div className="carousel-contenedor">
-            {info.carouselImagenes.map((imagen, index) => (
-              <img key={index} src={imagen.imagenCarousel} alt="" />
-            ))}
-            {info.carouselImagenes.map((imagen, index) => (
-              <img key={index} src={imagen.imagenCarousel} alt="" />
-            ))}
-          </div>
-        </div>
-      ))}
-    </>
-  );
-};
-
-export default SeccionCarousel;
-
-
-/* <div className="slider">
+          <div className="slider">
             <div className="slider-track">
               {info.carouselImagenes.map((imagen, index) => (
                 <div className="slide" key={index}>
@@ -53,4 +36,11 @@ export default SeccionCarousel;
                 </div>
               ))}
             </div>
-          </div> */
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export default SeccionCarousel;

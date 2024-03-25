@@ -45,7 +45,7 @@
           letter-spacing: 5px;
           word-spacing: 5px;
         }
-        .typed-cursor{
+        .typed-cursor {
           position: relative;
           right: 8px;
         }
@@ -133,7 +133,7 @@
             margin-top: 25px;
             background-color: $Secundario-naranja;
             border: 1px solid $Secundario-naranja;
-           
+
             p {
               padding: 2px 5px;
               font-weight: 100;
@@ -254,37 +254,39 @@
       line-height: 28px;
     }
 
-    .carousel-contenedor {
-      display: flex;
-      overflow-x: scroll;
+    .slider {
+      .slider-track {
+        display: flex;
+        overflow-x: scroll;
 
-      width: calc(500px * 30); //Cantidad de iconos * 2
-      animation: scroll 20s linear infinite;
+        width: calc(500px * 30); //Cantidad de imagenes * 2
+        animation: scroll 30s linear infinite;
 
-      &:hover {
-        animation-play-state: paused;
-      }
+        &:hover {
+          animation-play-state: paused;
+        }
+        .slide {
+          img {
+            width: 250px;
+            height: auto;
+            padding: 0 5px;
+            margin: 0;
 
-      img {
-        width: 250px;
-        height: auto;
-        padding: 0 5px;
-        margin: 0;
-
-
-        perspective: 100px;
+            perspective: 100px;
+          }
+        }
       }
     }
   }
 
   @keyframes scroll {
-  0% {
-    transform: translateX(0);
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 10)); //cantidad de iconos
+    }
   }
-  100% {
-    transform: translateX(calc(-250px * 10)); //cantidad de iconos
-  }
-}
 
   .mobile-regalos {
     .contenedor-imagen {
