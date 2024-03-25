@@ -10,7 +10,18 @@ import tituloSeccionCarousel from "../../assets/imagenes/titulos/RAMA.png";
 import tituloSeccionRegalos from "../../assets/imagenes/titulos/LOSREGALOS.png";
 import tituloSeccionForm from "../../assets/imagenes/titulos/NOSACOMPANAS.png";
 import tituloSeccionFooter from "../../assets/imagenes/titulos/LOSESPERAMOS.png";
-import imagenCarousel1 from "../../assets/imagenes/carousel/Carousel-img-1.jpeg";
+import imagenBolivia from "../../assets/imagenes/carousel/bolivia-paraguas.jpeg";
+import imagenCuzcoLlamas from "../../assets/imagenes/carousel/cuzco-llamas.jpeg";
+import imagenHuaraz from "../../assets/imagenes/carousel/huaraz.jpeg";
+import imagenHuarazLaguna from "../../assets/imagenes/carousel/huaraz-laguna.jpeg";
+import imagenIcaArena from "../../assets/imagenes/carousel/ica-arena.jpeg";
+import imagenIcaAtardecer from "../../assets/imagenes/carousel/ica-atardecer.jpeg";
+import imagenIquitosRio from "../../assets/imagenes/carousel/iquitos-rio.jpeg";
+import imagenIquitosTribu from "../../assets/imagenes/carousel/iquitos-tribu.jpeg";
+import imagenPunoTiticaca from "../../assets/imagenes/carousel/puno-titicaca.jpeg";
+import imagenUyuniPedida from "../../assets/imagenes/carousel/uyuni-pedida.jpeg";
+
+
 import {
   getFirestore,
   collection,
@@ -19,6 +30,7 @@ import {
   where,
   updateDoc,
 } from "firebase/firestore";
+import "aos/dist/aos.css";
 
 const InfoContextProvider = ({ children }) => {
   const informacion = [
@@ -68,13 +80,34 @@ const InfoContextProvider = ({ children }) => {
             "En el camino de la vida, cada paso juntos ha sido un viaje con el más bello de los paisajes, donde cada instante es un tesoro compartido que atesoro en el corazón",
           carouselImagenes: [
             {
-              imagenCarousel: imagenCarousel1,
+              imagenCarousel: imagenCuzcoLlamas,
             },
             {
-              imagenCarousel: imagenCarousel1,
+              imagenCarousel: imagenIcaArena,
             },
             {
-              imagenCarousel: imagenCarousel1,
+              imagenCarousel: imagenIcaAtardecer,
+            },
+            {
+              imagenCarousel: imagenIquitosRio,
+            },
+            {
+              imagenCarousel: imagenIquitosTribu,
+            },
+            {
+              imagenCarousel: imagenHuaraz,
+            },
+            {
+              imagenCarousel: imagenHuarazLaguna,
+            },
+            {
+              imagenCarousel: imagenPunoTiticaca,
+            },
+            {
+              imagenCarousel: imagenBolivia,
+            },
+            {
+              imagenCarousel: imagenUyuniPedida,
             },
           ],
         },
@@ -123,6 +156,13 @@ const InfoContextProvider = ({ children }) => {
   const infoRegalosArray = Object.values(informacion[0].seccionRegalos);
   const infoFormArray = Object.values(informacion[0].seccionForm);
   const infoFooterArray = Object.values(informacion[0].seccionFooter);
+
+
+
+/* ANIMACIONES */
+
+const animacionEntrada= "fade-in";
+const duracionAnimacion1= "3000";
 
   /* FORMULARIO */
 
@@ -228,6 +268,8 @@ const InfoContextProvider = ({ children }) => {
     setInvitadoRegistrado,
     respuestaAsistencia,
     setRespuestaAsistencia,
+    animacionEntrada,
+    duracionAnimacion1
   };
 
   return (

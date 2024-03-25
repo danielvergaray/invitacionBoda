@@ -5,11 +5,19 @@ import PopUpAsistencia from "./PopUpAsistencia";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SeccionFormulario = () => {
-  const { infoFormArray, loading, getUserData, handleEnviar, userData, respuestaAsistencia } =
-    useContext(InfoContext);
+  const {
+    infoFormArray,
+    loading,
+    getUserData,
+    handleEnviar,
+    userData,
+    respuestaAsistencia,
+    animacionEntrada,
+    duracionAnimacion1,
+  } = useContext(InfoContext);
 
   const [abrirPopUp, setAbrirPopUp] = useState(false);
- 
+
   const [show, setShow] = useState(false);
 
   const funcionAbrirPopUp = () => {
@@ -29,10 +37,18 @@ const SeccionFormulario = () => {
     <>
       {infoFormArray.map((info, index) => (
         <div key={index}>
-          <div className="contenedor-imagen">
+          <div
+            className="contenedor-imagen"
+            data-aos={animacionEntrada}
+            data-aos-duration={duracionAnimacion1}
+          >
             <img src={info.tituloImagen} alt="" />
           </div>
-          <div className="regalos-textos">
+          <div
+            className="regalos-textos"
+            data-aos={animacionEntrada}
+            data-aos-duration={duracionAnimacion1}
+          >
             <p>{info.titulo}</p>
           </div>
         </div>
@@ -49,7 +65,7 @@ const SeccionFormulario = () => {
         />
 
         <label htmlFor="respuesta"></label>
-      {/*   <select
+        {/*   <select
           name="respuesta"
           value={userData.respuesta}
           onChange={getUserData}
@@ -68,10 +84,12 @@ const SeccionFormulario = () => {
           type="text"
         />
 
-        {popUpAsistencia ? <PopUpAsistencia 
-        popUpAsistencia = {popUpAsistencia} 
-        setPopUpAsistencia = {setPopUpAsistencia}
-        /> : null}
+        {popUpAsistencia ? (
+          <PopUpAsistencia
+            popUpAsistencia={popUpAsistencia}
+            setPopUpAsistencia={setPopUpAsistencia}
+          />
+        ) : null}
 
         <label htmlFor="mensaje"></label>
         <textarea

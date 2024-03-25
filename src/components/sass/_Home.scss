@@ -130,15 +130,17 @@
             } */
           }
           .contador-texto {
-            margin-top: 10px;
+            margin-top: 25px;
             background-color: $Secundario-naranja;
             border: 1px solid $Secundario-naranja;
            
             p {
-               padding: 5px 10px;
-              font-weight: bolder;
+              padding: 2px 5px;
+              font-weight: 100;
               text-transform: lowercase;
               font-size: 0.7rem;
+              color: white;
+              width: 70px;
             }
           }
         }
@@ -256,13 +258,33 @@
       display: flex;
       overflow-x: scroll;
 
+      width: calc(500px * 30); //Cantidad de iconos * 2
+      animation: scroll 20s linear infinite;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+
       img {
-        width: 80vw;
+        width: 250px;
+        height: auto;
         padding: 0 5px;
         margin: 0;
+
+
+        perspective: 100px;
       }
     }
   }
+
+  @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 10)); //cantidad de iconos
+  }
+}
 
   .mobile-regalos {
     .contenedor-imagen {
@@ -303,6 +325,7 @@
       }
       button {
         margin-top: 20px;
+        animation: none;
       }
 
       .modal-open {

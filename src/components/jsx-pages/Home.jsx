@@ -68,7 +68,7 @@ const Home = () => {
               <ReactTyped
               strings={[`${info.fecha}`]}
               startWhenVisible
-              typeSpeed={500}
+              typeSpeed={300}
               
             />
             </div>
