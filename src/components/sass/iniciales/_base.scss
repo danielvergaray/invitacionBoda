@@ -67,34 +67,45 @@ body {
     }
   }
 
-  button {
-    padding: 10px 30px;
-    border: none;
-    background-color: $Secundario-naranja;
-    text-transform: uppercase;
-    font-weight: 100;
-    color: $Principal-blanco;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-
-    animation: fadeInUp 1s infinite;
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-      50% {
-        opacity: 1;
-        transform: translateX(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0px);
+  .mobile-sobreBoda,
+  .mobile-home-contador,
+  .mobile-dressCode,
+  .mobile-carousel,
+  .mobile-regalos,
+  .mobile-formulario{
+    button {
+      padding: 10px 30px;
+      border: none;
+      background-color: $Secundario-naranja;
+      text-transform: uppercase;
+      font-weight: 100;
+      color: $Principal-blanco;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+  
+      animation: ZoomIn 1s infinite;
+  
+      @keyframes ZoomIn {
+        0% {
+          opacity: 1;
+          /* transform: translateZ(0px); */
+          /* transform: scaleZ(0px); */
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(0.8);
+        }
       }
     }
   }
+
+  
   h1 {
     /* Titulo contador */
     font-size: 5rem;
@@ -115,5 +126,29 @@ body {
     font-size: 0.8rem;
     color: $Textos-negro;
     letter-spacing: 2px;
+  }
+
+  /* Estilos para el mensaje de copiado */
+  .copied-message {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: $Principal-gris-claro; /* Color de fondo */
+    color: black; /* Color del texto */
+    padding: 4px 8px; /* Espaciado interno */
+    border-radius: 4px; /* Borde redondeado */
+    font-size: 12px; /* Tamaño de fuente */
+  }
+
+  /* Estilos para el contenedor del overlay */
+  .copied-overlay {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+  }
+
+  /* Estilos adicionales para mejorar la apariencia */
+  .datos-bancarios-data {
+    margin-bottom: 10px; /* Espaciado entre elementos */
   }
 }
