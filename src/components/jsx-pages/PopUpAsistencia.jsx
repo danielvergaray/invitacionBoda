@@ -28,13 +28,13 @@ const PopUpAsistencia = ({ popUpAsistencia, setPopUpAsistencia }) => {
         onHide={handleClose}
         style={{ top: "25vh" }}
       >
-        <Modal.Header>
-          <Modal.Title>¿Asistirás?</Modal.Title>
+        <Modal.Header style={{backgroundColor:"white"}}>
+          <div className="popup-imagenRama">
+            <img src={imagenRama} alt="" />
+          </div>
         </Modal.Header>
-        <div className="popup-imagenRama">
-          <img src={imagenRama} alt="" />
-        </div>
-        <Modal.Footer>
+        <Modal.Title style={{textAlign:"center", backgroundColor:"white"}}>¿Asistirás?</Modal.Title>
+        <Modal.Footer style={{backgroundColor:"white"}}>
           <Button variant="secondary" onClick={() => respuestaFuncion("Si")}>
             Si
           </Button>

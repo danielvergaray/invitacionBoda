@@ -85,7 +85,7 @@ const SeccionFormulario = () => {
         />
 
         {popUpAsistencia ? (
-          <PopUpAsistencia
+          <PopUpAsistencia 
             popUpAsistencia={popUpAsistencia}
             setPopUpAsistencia={setPopUpAsistencia}
           />
@@ -103,7 +103,7 @@ const SeccionFormulario = () => {
         <button onClick={funcionAbrirPopUp} type="submit" disabled={loading}>
           {loading ? "Enviando..." : "Enviar"}
         </button>
-        {abrirPopUp && <PopUpModal show={show} setShow={setShow} />}
+        {abrirPopUp && <PopUpModal  show={show} setShow={setShow} />}
       </form>
     </>
   );

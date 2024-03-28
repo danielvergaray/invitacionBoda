@@ -10,16 +10,16 @@ import tituloSeccionCarousel from "../../assets/imagenes/titulos/RAMA.png";
 import tituloSeccionRegalos from "../../assets/imagenes/titulos/LOSREGALOS.png";
 import tituloSeccionForm from "../../assets/imagenes/titulos/NOSACOMPANAS.png";
 import tituloSeccionFooter from "../../assets/imagenes/titulos/LOSESPERAMOS.png";
-import imagenBolivia from "../../assets/imagenes/carousel/bolivia-paraguas.jpeg";
-import imagenCuzcoLlamas from "../../assets/imagenes/carousel/cuzco-llamas.jpeg";
-import imagenHuaraz from "../../assets/imagenes/carousel/huaraz.jpeg";
-import imagenHuarazLaguna from "../../assets/imagenes/carousel/huaraz-laguna.jpeg";
-import imagenIcaArena from "../../assets/imagenes/carousel/ica-arena.jpeg";
-import imagenIcaAtardecer from "../../assets/imagenes/carousel/ica-atardecer.jpeg";
-import imagenIquitosRio from "../../assets/imagenes/carousel/iquitos-rio.jpeg";
-import imagenIquitosTribu from "../../assets/imagenes/carousel/iquitos-tribu.jpeg";
-import imagenPunoTiticaca from "../../assets/imagenes/carousel/puno-titicaca.jpeg";
-import imagenUyuniPedida from "../../assets/imagenes/carousel/uyuni-pedida.jpeg";
+import imagen1 from "../../assets/imagenes/carousel/1.jpg";
+import imagen2 from "../../assets/imagenes/carousel/2.jpg";
+import imagen3 from "../../assets/imagenes/carousel/3.jpg";
+import imagen4 from "../../assets/imagenes/carousel/4.jpg";
+import imagen5 from "../../assets/imagenes/carousel/5.jpg";
+import imagen6 from "../../assets/imagenes/carousel/6.jpg";
+import imagen7 from "../../assets/imagenes/carousel/7.jpg";
+import imagen8 from "../../assets/imagenes/carousel/8.jpg";
+import imagen9 from "../../assets/imagenes/carousel/9.jpg";
+import imagen10 from "../../assets/imagenes/carousel/10.jpg";
 
 
 import {
@@ -46,8 +46,8 @@ const InfoContextProvider = ({ children }) => {
       seccionContador: [
         {
           tituloImagen: tituloSeccionContador,
-          titulo: "nuestra gran aventura comienza",
-          subtitulo: "y queremos que seas parte",
+          titulo: "¡Nos casamos!",
+          subtitulo: "¡Y estás invitado!",
         },
       ],
       seccionSobreBoda: [
@@ -77,37 +77,37 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionCarousel,
           titulo:
-            "En el camino de la vida, cada paso juntos ha sido un viaje con el más bello de los paisajes, donde cada instante es un tesoro compartido que atesoro en el corazón",
+            "En nuestro viaje por la vida, cada paso juntos ha sido una aventura llena de paisajes increíbles. Cada momento es un tesoro que guardamos en mi corazones.",
           carouselImagenes: [
             {
-              imagenCarousel: imagenCuzcoLlamas,
+              imagenCarousel: imagen1,
             },
             {
-              imagenCarousel: imagenIcaArena,
+              imagenCarousel: imagen2,
             },
             {
-              imagenCarousel: imagenIcaAtardecer,
+              imagenCarousel: imagen3,
             },
             {
-              imagenCarousel: imagenIquitosRio,
+              imagenCarousel: imagen4,
             },
             {
-              imagenCarousel: imagenIquitosTribu,
+              imagenCarousel: imagen5,
             },
             {
-              imagenCarousel: imagenHuaraz,
+              imagenCarousel: imagen6,
             },
             {
-              imagenCarousel: imagenHuarazLaguna,
+              imagenCarousel: imagen7,
             },
             {
-              imagenCarousel: imagenPunoTiticaca,
+              imagenCarousel: imagen8,
             },
             {
-              imagenCarousel: imagenBolivia,
+              imagenCarousel: imagen9,
             },
             {
-              imagenCarousel: imagenUyuniPedida,
+              imagenCarousel: imagen10,
             },
           ],
         },
@@ -123,7 +123,7 @@ const InfoContextProvider = ({ children }) => {
       seccionForm: [
         {
           tituloImagen: tituloSeccionForm,
-          titulo: "Es muy importante para nosotros que confirmes tu presencia",
+          titulo: "Es muy importante para nosotros que confirmes tu asistencia, asegurate de hacerlo antes del 30 de abril.",
           /*  inputs: [
             {
               input: "Nombre y Apellido",

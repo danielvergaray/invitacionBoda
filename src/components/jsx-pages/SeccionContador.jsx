@@ -19,7 +19,7 @@ const SeccionContador = () => {
           <div className="contador-subtitulo">
             <h2>{info.subtitulo}</h2>
             <ReactTyped
-              strings={["¡Te esperamos este día especial!"]}
+              strings={[" Estamos emocionados y contando los días para celebrar juntos."]}
               typeSpeed={40}
               loop
             />

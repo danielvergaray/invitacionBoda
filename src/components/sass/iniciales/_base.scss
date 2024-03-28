@@ -72,7 +72,7 @@ body {
   .mobile-dressCode,
   .mobile-carousel,
   .mobile-regalos,
-  .mobile-formulario{
+  .mobile-formulario {
     button {
       padding: 10px 30px;
       border: none;
@@ -83,15 +83,15 @@ body {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 3px;
-  
+
       animation: ZoomIn 1s infinite;
-  
+
       @keyframes ZoomIn {
         0% {
           opacity: 1;
           /* transform: translateZ(0px); */
           /* transform: scaleZ(0px); */
-          transform: scale(0.8);
+          transform: scale(0.95);
         }
         50% {
           opacity: 1;
@@ -99,13 +99,12 @@ body {
         }
         100% {
           opacity: 1;
-          transform: scale(0.8);
+          transform: scale(0.95);
         }
       }
     }
   }
 
-  
   h1 {
     /* Titulo contador */
     font-size: 5rem;
@@ -140,15 +139,29 @@ body {
     font-size: 12px; /* Tamaño de fuente */
   }
 
-  /* Estilos para el contenedor del overlay */
-  .copied-overlay {
-    position: relative;
-    display: inline-block;
-    cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
-  }
-
   /* Estilos adicionales para mejorar la apariencia */
   .datos-bancarios-data {
     margin-bottom: 10px; /* Espaciado entre elementos */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    .tipo-pago {
+      margin: 0;
+      font-size: 0.6rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    p {
+      margin: 0;
+      font-size: 1.25rem;
+      width: fit-content;
+    }
+
+    /* Estilos para el contenedor del overlay */
+    .copied-overlay {
+      position: relative;
+      display: inline-block;
+      cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+    }
   }
 }
