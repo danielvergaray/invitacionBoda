@@ -30,11 +30,11 @@ const SeccionCarousel = () => {
                   <img src={imagen.imagenCarousel} alt="" />
                 </div>
               ))}
-              {info.carouselImagenes.map((imagen, index) => (
+              {/* {info.carouselImagenes.map((imagen, index) => (
                 <div className="slide" key={index}>
                   <img src={imagen.imagenCarousel} alt="" />
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

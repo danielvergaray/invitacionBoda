@@ -61,13 +61,16 @@
 
   .mobile-home-contador {
     text-align: center;
+    .contenedor-imagen{
+      padding-bottom: 20px;
+    }
 
     .contador-titulo {
       padding-bottom: 10px;
       font-weight: 100;
       width: 100%;
       margin: auto;
-      letter-spacing: 5px;
+      letter-spacing: 0px;
       line-height: 20px;
       padding-top: 15px;
     }
@@ -76,6 +79,7 @@
       padding-bottom: 30px;
       h2 {
         font-size: 1.5rem;
+        padding: 5px 0;
       }
       span {
         color: $Textos-negro-claro;
@@ -104,42 +108,30 @@
             height: fit-content;
 
             .contador-recuadro-digito {
-              width: fit-content;
-              height: fit-content;
+              width: 50px;
+              height: 50px;
               padding: 0;
-
+              border-radius: 90%;
+              background-color: $Secundario-naranja;
               p {
-                font-size: 3.5rem;
+                font-size: 1.5rem;
                 /*  padding-left: 3vw; */
-                font-family: "NT-SEAWAVE";
-                width: fit-content;
-                height: 60px;
-                margin: 0;
-              }
-            }
-            /* .contador-recuadro-span {
-              padding-left: 5vw;
-              width: 100%;
-              span {
-                background-color: $Secundario-naranja;
-                width: 1px;
-                height: 100%;
-                display: block;
+                /*  font-family: "NT-SEAWAVE"; */
+                color: white;
                 margin: auto;
               }
-            } */
+            }
+            
           }
           .contador-texto {
-            margin-top: 25px;
-            background-color: $Secundario-naranja;
-            border: 1px solid $Secundario-naranja;
+            margin-top: 5px;
 
             p {
               padding: 2px 5px;
-              font-weight: 100;
+              font-weight: 700;
               text-transform: lowercase;
               font-size: 0.7rem;
-              color: white;
+              color: $Secundario-naranja;
               width: 70px;
             }
           }
@@ -259,19 +251,16 @@
         display: flex;
         overflow-x: scroll;
 
-        width: calc(500px * 30); //Cantidad de imagenes * 2
-        animation: scroll 30s linear infinite;
+        width: calc(400px * 20); //Cantidad de imagenes * 2
+        animation: scroll 20s linear infinite alternate ; 
 
         &:hover {
           animation-play-state: paused;
         }
         .slide {
           img {
-            max-width: 400px;
-            height: 400px;
-            padding: 0 5px;
-            margin: 0;
-
+            height: 300px;
+            margin: 0 5px;
             perspective: 100px;
           }
         }
@@ -284,7 +273,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-250px * 10)); //cantidad de iconos
+      transform: translateX(calc(-250px * 11.5)); //cantidad de iconos
     }
   }
 
@@ -298,7 +287,7 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-      z-index: 1000;      
+      z-index: 1000;
     }
 
     .contenedor-imagen {
@@ -377,7 +366,5 @@
         }
       }
     }
-
-    
   }
 }

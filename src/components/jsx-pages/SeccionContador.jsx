@@ -4,7 +4,8 @@ import { ReactTyped } from "react-typed";
 import CuentaRegresiva from "../contador/CuentaRegresiva";
 
 const SeccionContador = () => {
-  const { infoContadorArray } = useContext(InfoContext);
+  const { infoContadorArray, animacionEntrada, duracionAnimacion1 } =
+    useContext(InfoContext);
   return (
     <>
       {infoContadorArray.map((info, index) => (
@@ -13,16 +14,30 @@ const SeccionContador = () => {
             <img src={info.tituloImagen} alt="" />
           </div>
           <div className="contador-titulo">
-            <h1>{info.titulo} </h1>
-
+            {/*   <h1>{info.titulo} </h1> */}
+            <h1>
+              <ReactTyped strings={[info.titulo]} typeSpeed={80} loop />
+            </h1>
           </div>
           <div className="contador-subtitulo">
-            <h2>{info.subtitulo}</h2>
-            <ReactTyped
-              strings={[" Estamos emocionados y contando los días para celebrar juntos."]}
-              typeSpeed={40}
+            {/* <ReactTyped
+              strings={[info.subtitulo ]}
+              typeSpeed={80}
               loop
-            />
+            /> */}
+            <h2
+              data-aos={animacionEntrada}
+              data-aos-duration={duracionAnimacion1}
+            >
+              {info.subtitulo}
+            </h2>
+
+            <h2
+              data-aos={animacionEntrada}
+              data-aos-duration={duracionAnimacion1}
+            >
+              Estamos emocionados y contando los días para celebrar juntos.
+            </h2>
           </div>
         </div>
       ))}

@@ -69,7 +69,7 @@ const Home = () => {
               strings={[`${info.fecha}`]}
               startWhenVisible
               typeSpeed={300}
-              
+             
             />
             </div>
           ))}

@@ -46,7 +46,7 @@ const InfoContextProvider = ({ children }) => {
       seccionContador: [
         {
           tituloImagen: tituloSeccionContador,
-          titulo: "¡Nos casamos!",
+          titulo: "Nos casamos",
           subtitulo: "¡Y estás invitado!",
         },
       ],
