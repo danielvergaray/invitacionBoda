@@ -17,7 +17,7 @@ const DatosBancarios = ({ onClose }) => {
   };
 
   return (
-    <Modal show={true} onHide={onClose} style={{ top: "25vh" }}>
+    <Modal show={true} onHide={onClose} style={{ top: "15vh" }}>
       <Modal.Header style={{ backgroundColor: "#dc7648" }} closeButton>
         <Modal.Title style={{ display: "flex", justifyContent: "left" , padding:"0"}}>
           <img style={{ width: "45%" }} src={tituloDatos} alt="" />

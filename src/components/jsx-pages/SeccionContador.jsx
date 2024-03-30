@@ -16,7 +16,7 @@ const SeccionContador = () => {
           <div className="contador-titulo">
             {/*   <h1>{info.titulo} </h1> */}
             <h1>
-              <ReactTyped strings={[info.titulo]} typeSpeed={80} loop />
+              <ReactTyped strings={[info.titulo]} typeSpeed={150} loop />
             </h1>
           </div>
           <div className="contador-subtitulo">
