@@ -44,28 +44,28 @@ const SeccionFormulario = () => {
           >
             <img src={info.tituloImagen} alt="" />
           </div>
-          <div
-            className="regalos-textos"
-            data-aos={animacionEntrada}
-            data-aos-duration={duracionAnimacion1}
-          >
-            <p>{info.titulo}</p>
-          </div>
-        </div>
-      ))}
-      <form className="inputs-container" onSubmit={handleEnviar}>
-        <label htmlFor="nombre"></label>
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Nombre y Apellido"
-          value={userData.nombre}
-          onChange={getUserData}
-          required
-        />
+          <article className="formulario-contenido">
+            <div
+              className="regalos-textos"
+              data-aos={animacionEntrada}
+              data-aos-duration={duracionAnimacion1}
+            >
+              <p>{info.titulo}</p>
+            </div>
 
-        <label htmlFor="respuesta"></label>
-        {/*   <select
+            <form className="inputs-container" onSubmit={handleEnviar}>
+              <label htmlFor="nombre"></label>
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre y Apellido"
+                value={userData.nombre}
+                onChange={getUserData}
+                required
+              />
+
+              <label htmlFor="respuesta"></label>
+              {/*   <select
           name="respuesta"
           value={userData.respuesta}
           onChange={getUserData}
@@ -76,35 +76,42 @@ const SeccionFormulario = () => {
           <option value="No">No</option>
         </select> */}
 
-        <input
-          onClick={abrirPopUpAsistencia}
-          placeholder={`¿Asistirás? ${respuestaAsistencia}`}
-          value={userData.respuesta}
-          onChange={getUserData}
-          type="text"
-        />
+              <input
+                onClick={abrirPopUpAsistencia}
+                placeholder={`¿Asistirás? ${respuestaAsistencia}`}
+                value={userData.respuesta}
+                onChange={getUserData}
+                type="text"
+              />
 
-        {popUpAsistencia ? (
-          <PopUpAsistencia 
-            popUpAsistencia={popUpAsistencia}
-            setPopUpAsistencia={setPopUpAsistencia}
-          />
-        ) : null}
+              {popUpAsistencia ? (
+                <PopUpAsistencia
+                  popUpAsistencia={popUpAsistencia}
+                  setPopUpAsistencia={setPopUpAsistencia}
+                />
+              ) : null}
 
-        <label htmlFor="mensaje"></label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          placeholder="Escribe tu mensaje"
-          value={userData.mensaje}
-          onChange={getUserData}
-          required
-        />
-        <button onClick={funcionAbrirPopUp} type="submit" disabled={loading}>
-          {loading ? "Enviando..." : "Enviar"}
-        </button>
-        {abrirPopUp && <PopUpModal  show={show} setShow={setShow} />}
-      </form>
+              <label htmlFor="mensaje"></label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escribe tu mensaje"
+                value={userData.mensaje}
+                onChange={getUserData}
+                required
+              />
+              <button
+                onClick={funcionAbrirPopUp}
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Enviando..." : "Enviar"}
+              </button>
+              {abrirPopUp && <PopUpModal show={show} setShow={setShow} />}
+            </form>
+          </article>
+        </div>
+      ))}
     </>
   );
 };

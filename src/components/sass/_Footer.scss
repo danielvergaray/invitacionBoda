@@ -1,13 +1,33 @@
-.mobile-footer {
-  text-align: center;
-  background-color: $Secundario-naranja;
-  padding: 40px 10px;
-  .contenedor-imagen {
-    width: 80%;
-    margin: auto;
-
-    img {
-      width: 100%;
+@media (min-width: 847px){
+  .mobile-footer {
+    text-align: center;
+    background-color: $Secundario-naranja;
+    padding: 40px 10px;
+    .contenedor-imagen {
+      width: 40%;
+      margin: auto;
+  
+      img {
+        width: 100%;
+      }
     }
   }
 }
+
+@media (max-width: 846px){
+  .mobile-footer {
+    text-align: center;
+    background-color: $Secundario-naranja;
+    padding: 40px 10px;
+    .contenedor-imagen {
+      width: 80%;
+      margin: auto;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+

@@ -15,10 +15,11 @@ body {
       text-align: center;
       font-size: 1.5rem;
       color: $Textos-negro-claro;
-      /*   line-height: 20px; */
-      /* width: 67vw; */
       margin: auto;
     }
+  }
+  .mobile-dressCode {
+    padding-top: 0;
   }
 
   .mobile-dressCode,
@@ -162,6 +163,76 @@ body {
       position: relative;
       display: inline-block;
       cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+    }
+  }
+}
+
+@media (min-width: 847px) {
+  body {
+    .mobile-home-contador,
+    .mobile-carousel {
+      .contenedor-imagen {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        img {
+          width: 15%;
+        }
+      }
+    }
+    .mobile-formulario {
+      .contenedor-imagen {
+        width: 50%;
+        margin: auto;
+  
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    h1 {
+      /* Titulo contador */
+      font-size: 8rem;
+      text-align: center;
+      margin: 0;
+      height: max-content;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+
+    .mobile-sobreBoda,
+    .mobile-home-contador,
+    .mobile-dressCode,
+    .mobile-carousel,
+    .mobile-regalos,
+    .mobile-formulario {
+      button {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 2.25rem;
+        line-height: 35px;
+      }
+    }
+
+    .mobile-dressCode,
+    .mobile-regalos,
+    .mobile-formulario {
+      text-align: center;
+
+      .dressCode-textos,
+      .regalos-textos {
+        p {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }

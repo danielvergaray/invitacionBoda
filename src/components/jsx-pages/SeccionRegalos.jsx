@@ -23,9 +23,6 @@ const SeccionRegalos = () => {
     window.history.replaceState(null, "", "/");
   };
 
-
-
-
   return (
     <>
       <div className="home-content">
@@ -39,26 +36,29 @@ const SeccionRegalos = () => {
             >
               <img src={info.tituloImagen} alt="" />
             </div>
-            <div
-              className="regalos-textos"
-              data-aos={animacionEntrada}
-              data-aos-duration={duracionAnimacion1}
-            >
-              <p>{info.titulo}</p>
-            </div>
-            <div
-              data-aos={animacionEntrada}
-              data-aos-duration={duracionAnimacion1}
-            >
-              <button onClick={openPopup}>{info.boton}</button>
-            </div>
+
+            <article className="regalos-contenido">
+              <div
+                className="regalos-textos"
+                data-aos={animacionEntrada}
+                data-aos-duration={duracionAnimacion1}
+              >
+                <p>{info.titulo}</p>
+              </div>
+              <div
+                data-aos={animacionEntrada}
+                data-aos-duration={duracionAnimacion1}
+              >
+                <button onClick={openPopup}>{info.boton}</button>
+              </div>
+            </article>
           </div>
         ))}
       </div>
-      
+
       {showPopup && (
-        <div >
-          <div >
+        <div>
+          <div>
             <DatosBancarios onClose={closePopup} />
           </div>
         </div>

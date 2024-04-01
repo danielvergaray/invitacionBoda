@@ -1,5 +1,380 @@
 @import "/src/components/sass/reutilizables/colors";
 
+@media (min-width: 847px) {
+  .hero-desktop {
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+    .mobile-home-hero-fondo1 {
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("./assets/imagenes/FONDO_01.png");
+      height: 90vh;
+    }
+
+    .mobile-home-hero {
+      background-position: left 85% bottom 45%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("./assets/imagenes/FONDO_02.png");
+      height: 90vh;
+
+      .hero-titulo {
+        width: 50%;
+        padding-top: 100px;
+        img {
+          width: 100%;
+        }
+      }
+      .hero-fecha {
+        text-align: center;
+        div {
+          padding-right: 20%;
+          span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: $Principal-blanco;
+            display: flex;
+            justify-content: center;
+            font-family: "NEUEHAAS";
+            letter-spacing: 5px;
+            word-spacing: 5px;
+          }
+          .typed-cursor {
+            position: relative;
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+  .mobile-home-contador {
+    .contenedor-imagen {
+      padding-bottom: 60px;
+    }
+    .contador-titulo {
+      padding-bottom: 50px;
+      height: max-content;
+    }
+    .home-cuentaRegresiva {
+      div {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 50px;
+
+        .contador-recuadro {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 0;
+          .contador-recuadro-numero {
+            width: fit-content;
+            height: fit-content;
+            padding-top: 0;
+            .contador-recuadro-digito {
+              width: 9rem;
+              height: 9rem;
+              padding: 0;
+              border-radius: 90%;
+              background-color: $Secundario-naranja;
+              p {
+                font-size: 5rem;
+                color: white;
+                margin: auto;
+              }
+            }
+          }
+          .contador-texto {
+            margin-top: 5px;
+            padding: 0;
+            p {
+              padding: 0;
+              font-weight: 100;
+              text-transform: lowercase;
+              font-size: 2rem;
+              color: $Secundario-naranja;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-sobreBoda {
+    background-color: $Principal-gris-claro;
+
+    .sobreBoda-mobile {
+      display: none;
+    }
+    .contenedor-imagen {
+      width: 40%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    .sobreBoda-contenido-desktop {
+      display: grid;
+      grid-template-columns: 35% 35% 30%;
+      padding: 50px 0;
+      height: 300px;
+      text-align: center;
+      .sobreBoda-fecha-hora-container {
+        grid-column: 1;
+        display: grid;
+        grid-template-rows: 20% 80%;
+
+        .sobreBoda-subtitulo {
+          text-align: center;
+          padding: 0;
+          grid-row: 1;
+          margin: auto;
+          h3 {
+            margin: 0;
+          }
+        }
+        .sobreBoda-fecha-hora {
+          display: grid;
+          grid-template-columns: 40% 10% 50%;
+          grid-row: 2;
+          margin: auto 0;
+          .sobreBoda-fecha {
+            grid-column: 1;
+            text-align: right;
+            height: fit-content;
+            p:nth-child(1) {
+              font-size: 4.5rem;
+              font-family: "NT-SEAWAVE";
+              height: 90px;
+            }
+          }
+          .sobreBoda-span {
+            grid-column: 2;
+            width: 100%;
+            span {
+              background-color: $Secundario-naranja;
+              width: 2px;
+              height: 70%;
+              display: block;
+              margin: auto;
+            }
+          }
+          .sobreBoda-hora {
+            grid-column: 3;
+            height: min-content;
+            p:nth-child(1) {
+              font-size: 4.5rem;
+              font-family: "NT-SEAWAVE";
+              height: 90px;
+            }
+          }
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: 100;
+        }
+      }
+      .sobreBoda-lugar {
+        text-align: center;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 20% 80%;
+
+        h3 {
+          grid-row: 1;
+          margin: auto;
+        }
+        .sobreBoda-lugar-ubicacion {
+          padding: 5px 0 15px;
+          grid-row: 2;
+          margin: auto;
+        }
+      }
+      .sobreBoda-btn {
+        margin: auto;
+      }
+    }
+  }
+  .mobile-dressCode {
+    background-color: $Principal-gris-claro;
+    padding-top: 0;
+    .dressCode-mobile {
+      display: none;
+    }
+
+    .dessCode-desktop-contenido {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding-top: 50px;
+
+      .dressCode-textos {
+        padding: 0;
+      }
+
+      div {
+        margin: auto;
+      }
+    }
+
+    p {
+      padding-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+  .mobile-carousel {
+    overflow-x: hidden;
+    padding-bottom: 0 !important;
+    p {
+      padding: 30px;
+      line-height: 28px;
+    }
+
+    .slider {
+      .slider-track {
+        display: flex;
+        /* overflow-x: scroll; */
+        width: calc(400px * 20); //Cantidad de imagenes * 2
+        animation: scroll 20s linear infinite alternate;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+        .slide {
+          img {
+            height: 400px;
+            margin: 0 5px;
+            perspective: 100px;
+          }
+        }
+      }
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 10)); //cantidad de iconos
+    }
+  }
+  .mobile-regalos {
+    .contenedor-imagen {
+      width: 35%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+    .regalos-contenido {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 50px 0;
+
+      div {
+        margin: auto;
+      }
+      .regalos-textos {
+        padding: 0;
+        p {
+          line-height: 35px;
+        }
+      }
+    }
+  }
+  .mobile-formulario {
+    background-color: $Principal-gris-claro;
+
+    .formulario-contenido {
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+      .regalos-textos {
+        padding: 0px 50px 50px;
+        margin: 120px auto;
+
+        p {
+          line-height: 35px;
+        }
+      }
+
+      .inputs-container {
+        padding: 50px;
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          margin: 7px 0;
+          font-size: 1rem;
+        }
+        select {
+          width: 100%;
+          padding: 10px;
+          text-align: left;
+          color: gray;
+          padding-left: 5px;
+          border: none;
+          margin: 7px 0;
+          border-radius: 0;
+        }
+        textarea {
+          height: 140px;
+          text-align: left;
+        }
+        button {
+          margin-top: 20px;
+          animation: none;
+          width: 100%;
+        }
+
+        .modal-open {
+          .modal {
+            .modal-dialog {
+              .modal-content {
+                background-color: $Principal-gris-claro;
+                border: none;
+
+                .modal-header {
+                  display: grid;
+                  grid-template-columns: 50% 50%;
+
+                  .modal-title {
+                    grid-column: 1;
+                    display: flex;
+                    justify-content: flex-end;
+                    svg {
+                      color: $Secundario-naranja;
+                      font-size: 2rem;
+                    }
+                  }
+                  button {
+                    grid-column: 2;
+                    font-size: 1rem;
+                  }
+                }
+                .modal-footer {
+                  button {
+                    background-color: yellow;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 846px) {
   .mobile-home-hero-fondo1 {
     height: 100vh;
@@ -7,7 +382,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("./assets/imagenes/FONDO_01.png");
-    height: 100vh;
+    height: 90vh;
   }
 
   .mobile-home-hero {
@@ -15,7 +390,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("./assets/imagenes/FONDO_02.png");
-    height: 100vh;
+    height: 90vh;
     position: absolute;
     top: 0;
     width: 100%;
@@ -61,7 +436,7 @@
 
   .mobile-home-contador {
     text-align: center;
-    .contenedor-imagen{
+    .contenedor-imagen {
       padding-bottom: 20px;
     }
 
@@ -71,7 +446,6 @@
       width: 100%;
       margin: auto;
       letter-spacing: 0px;
-      line-height: 20px;
       padding-top: 15px;
     }
 
@@ -121,7 +495,6 @@
                 margin: auto;
               }
             }
-            
           }
           .contador-texto {
             margin-top: 5px;
@@ -158,6 +531,11 @@
   .mobile-sobreBoda {
     background-color: $Principal-gris-claro;
     padding-bottom: 0 !important;
+
+    .sobreBoda-desktop {
+      display: none;
+    }
+
     .contenedor-imagen {
       width: 70%;
       margin: auto;
@@ -227,6 +605,9 @@
 
   .mobile-dressCode {
     background-color: $Principal-gris-claro;
+    .dressCode-desktop {
+      display: none;
+    }
     .contenedor-imagen {
       width: 60%;
       margin: auto;
@@ -249,10 +630,9 @@
     .slider {
       .slider-track {
         display: flex;
-        overflow-x: scroll;
-
+       /*  overflow-x: scroll; */
         width: calc(400px * 20); //Cantidad de imagenes * 2
-        animation: scroll 20s linear infinite alternate ; 
+        animation: scroll 20s linear infinite alternate;
 
         &:hover {
           animation-play-state: paused;
