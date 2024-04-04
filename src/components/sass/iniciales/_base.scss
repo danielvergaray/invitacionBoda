@@ -9,7 +9,7 @@ body {
   .mobile-carousel,
   .mobile-regalos,
   .mobile-formulario {
-    padding: 60px 4vw;
+    padding: 70px 4vw;
 
     p {
       text-align: center;
@@ -84,8 +84,11 @@ body {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 3px;
-
       animation: ZoomIn 1s infinite;
+      a {
+        text-decoration: none;
+        color: $Principal-blanco;
+      }
 
       @keyframes ZoomIn {
         0% {
@@ -172,7 +175,7 @@ body {
     .mobile-home-contador,
     .mobile-carousel {
       .contenedor-imagen {
-        width: 100%;
+        width: 80%;
         margin: auto;
         text-align: center;
         img {
@@ -182,9 +185,9 @@ body {
     }
     .mobile-formulario {
       .contenedor-imagen {
-        width: 50%;
+        width: 40%;
         margin: auto;
-  
+
         img {
           width: 100%;
           height: auto;
@@ -215,9 +218,13 @@ body {
     .mobile-formulario {
       button {
         font-size: 1.25rem;
+
+        a{
+          color: $Principal-blanco;
+        }
       }
       p {
-        font-size: 2.25rem;
+        font-size: 2rem;
         line-height: 35px;
       }
     }
@@ -231,6 +238,10 @@ body {
       .regalos-textos {
         p {
           font-size: 2rem;
+          text-align: left;
+        }
+        h3 {
+          font-weight: 500;
         }
       }
     }

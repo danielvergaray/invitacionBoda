@@ -20,11 +20,7 @@ const SeccionContador = () => {
             </h1>
           </div>
           <div className="contador-subtitulo">
-            {/* <ReactTyped
-              strings={[info.subtitulo ]}
-              typeSpeed={80}
-              loop
-            /> */}
+           
             <h2
               data-aos={animacionEntrada}
               data-aos-duration={duracionAnimacion1}
@@ -32,12 +28,7 @@ const SeccionContador = () => {
               {info.subtitulo}
             </h2>
 
-            <h2
-              data-aos={animacionEntrada}
-              data-aos-duration={duracionAnimacion1}
-            >
-              Estamos emocionados y contando los días para celebrar juntos.
-            </h2>
+            
           </div>
         </div>
       ))}

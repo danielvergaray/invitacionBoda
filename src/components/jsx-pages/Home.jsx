@@ -30,50 +30,92 @@ const Home = () => {
 
   return (
     <>
-      <section className="hero-desktop">
-        <section className="mobile-home-hero-fondo1"></section>
-        <section
-          className="mobile-home-hero"
+      <section className="hero-desktop-fondo1"></section>
+      <section
+        className="hero-desktop"
+        data-aos-easing="linear"
+        data-aos="fade-in"
+        data-aos-duration="2000"
+      >
+        <div
+          className="hero-titulo"
+          data-aos-easing="linear"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+        >
+          {infoHomeArray.map((info, index) => (
+            <div key={index}>
+              <img
+                className="titulo-imagen"
+                src={info.tituloImagenPortada}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div
+          className="hero-fecha"
           data-aos-easing="linear"
           data-aos="fade-in"
           data-aos-duration="2000"
+          data-aos-delay="1500"
         >
-          <div
-            className="hero-titulo"
-            data-aos-easing="linear"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="1000"
-          >
-            {infoHomeArray.map((info, index) => (
-              <div key={index}>
-                <img
-                  className="titulo-imagen"
-                  src={info.tituloImagenPortada}
-                  alt=""
-                />
-              </div>
-            ))}
-          </div>
-          <div
-            className="hero-fecha"
-            data-aos-easing="linear"
-            data-aos="fade-in"
-            data-aos-duration="2000"
-            data-aos-delay="1500"
-          >
-            {infoHomeArray.map((info, index) => (
-              <div key={index}>
-                {/* <p>{info.fecha} </p> */}
-                <ReactTyped
-                  strings={[`${info.fecha}`]}
-                  startWhenVisible
-                  typeSpeed={300}
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+          {infoHomeArray.map((info, index) => (
+            <div key={index}>
+              {/* <p>{info.fecha} </p> */}
+              <ReactTyped
+                strings={[`${info.fecha}`]}
+                startWhenVisible
+                typeSpeed={300}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mobile-home-hero-fondo1"></section>
+      <section
+        className="mobile-home-hero"
+        data-aos-easing="linear"
+        data-aos="fade-in"
+        data-aos-duration="2000"
+      >
+        <div
+          className="hero-titulo"
+          data-aos-easing="linear"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+        >
+          {infoHomeArray.map((info, index) => (
+            <div key={index}>
+              <img
+                className="titulo-imagen"
+                src={info.tituloImagenPortada}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div
+          className="hero-fecha"
+          data-aos-easing="linear"
+          data-aos="fade-in"
+          data-aos-duration="2000"
+          data-aos-delay="1500"
+        >
+          {infoHomeArray.map((info, index) => (
+            <div key={index}>
+              {/* <p>{info.fecha} </p> */}
+              <ReactTyped
+                strings={[`${info.fecha}`]}
+                startWhenVisible
+                typeSpeed={300}
+              />
+            </div>
+          ))}
+        </div>
       </section>
       <section className="mobile-home-contador">
         <SeccionContador />

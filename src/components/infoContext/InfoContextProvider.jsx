@@ -20,7 +20,7 @@ import imagen7 from "../../assets/imagenes/carousel/7.jpg";
 import imagen8 from "../../assets/imagenes/carousel/8.jpg";
 import imagen9 from "../../assets/imagenes/carousel/9.jpg";
 import imagen10 from "../../assets/imagenes/carousel/10.jpg";
-
+import imagenDesktop from '../../assets/imagenes/FOTODESKTOP.jpg' 
 
 import {
   getFirestore,
@@ -41,13 +41,15 @@ const InfoContextProvider = ({ children }) => {
           imagen2: imagenHome2,
           tituloImagenPortada: tituloImagenPortada,
           fecha: "29.06.24",
+          imagenDesktop: imagenDesktop
         },
       ],
       seccionContador: [
         {
           tituloImagen: tituloSeccionContador,
           titulo: "Nos casamos",
-          subtitulo: "¡Y estás invitado!",
+          subtitulo:
+            "Estás invitado a nuestra boda y estamos emocionados contando los días para celebrar juntos.",
         },
       ],
       seccionSobreBoda: [
@@ -56,12 +58,28 @@ const InfoContextProvider = ({ children }) => {
           subtitulo: "fecha y hora",
           dia: "29",
           mes: "de junio",
-          hora: "3:00",
+          hora: "2:30",
           rango: "de la tarde",
           subtitulo2: "lugar",
           direccion: "Jirón La Floresta 125 - Camacho",
           distrito: "Santiado de Surco",
           boton: "ver mapa",
+        },
+      ],
+      seccionSobreBodaMobile: [
+        {
+          subtitulo: "fecha y hora",
+          dia: "29",
+          mes: "de junio",
+          hora: "2:30",
+          rango: "de la tarde",
+          diapositiva: 1,
+        },
+        {
+          subtitulo: "lugar",
+          direccion: "Jirón La Floresta 125 - Camacho",
+          distrito: "Santiago de Surco",
+          diapositiva: 2,
         },
       ],
       seccionDressCode: [
@@ -77,7 +95,7 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionCarousel,
           titulo:
-            "En nuestro viaje por la vida, cada paso juntos ha sido una aventura llena de paisajes increíbles. Cada momento es un tesoro que guardamos en mi corazones.",
+            "En nuestro viaje por la vida, cada paso juntos ha sido una aventura llena de paisajes increíbles. Cada momento es un tesoro que guardamos en nuestros corazones.",
           carouselImagenes: [
             {
               imagenCarousel: imagen1,
@@ -123,7 +141,8 @@ const InfoContextProvider = ({ children }) => {
       seccionForm: [
         {
           tituloImagen: tituloSeccionForm,
-          titulo: "Es muy importante para nosotros que confirmes tu asistencia, asegurate de hacerlo antes del 30 de abril.",
+          titulo:
+            "Es muy importante para nosotros que confirmes tu asistencia, asegurate de hacerlo antes del 30 de abril.",
           /*  inputs: [
             {
               input: "Nombre y Apellido",
@@ -151,18 +170,19 @@ const InfoContextProvider = ({ children }) => {
   const infoHomeArray = Object.values(informacion[0].seccionHome);
   const infoContadorArray = Object.values(informacion[0].seccionContador);
   const infoSobreBodaArray = Object.values(informacion[0].seccionSobreBoda);
+  const infoSobreBodaMobileArray = Object.values(
+    informacion[0].seccionSobreBodaMobile
+  );
   const infoDressCodeArray = Object.values(informacion[0].seccionDressCode);
   const infoCarouselArray = Object.values(informacion[0].seccionCarousel);
   const infoRegalosArray = Object.values(informacion[0].seccionRegalos);
   const infoFormArray = Object.values(informacion[0].seccionForm);
   const infoFooterArray = Object.values(informacion[0].seccionFooter);
 
+  /* ANIMACIONES */
 
-
-/* ANIMACIONES */
-
-const animacionEntrada= "fade-in";
-const duracionAnimacion1= "3000";
+  const animacionEntrada = "fade-in";
+  const duracionAnimacion1 = "3000";
 
   /* FORMULARIO */
 
@@ -211,8 +231,10 @@ const duracionAnimacion1= "3000";
             console.log("Este invitado ya ha respondido anteriormente");
             setInvitadoRegistrado("repetido");
             // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
-            return updateDoc(docRef, {respuesta: userData.respuesta,
-              mensaje: userData.mensaje });
+            return updateDoc(docRef, {
+              respuesta: userData.respuesta,
+              mensaje: userData.mensaje,
+            });
           } else {
             // Actualizar la respuesta del invitado
             console.log("Respuesta actualizada correctamente en Firebase");
@@ -269,7 +291,8 @@ const duracionAnimacion1= "3000";
     respuestaAsistencia,
     setRespuestaAsistencia,
     animacionEntrada,
-    duracionAnimacion1
+    duracionAnimacion1,
+    infoSobreBodaMobileArray,
   };
 
   return (

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import InfoContext from "../infoContext/InfoContext";
 
 const DressCode = () => {
@@ -19,14 +20,18 @@ const DressCode = () => {
             </div>
 
             <article className="dessCode-desktop-contenido">
-              
-              <div className="dressCode-textos">
-              <p>{info.titulo}</p>
+              <div className="dressCode-textos" data-aos={animacionEntrada}
+              data-aos-duration={duracionAnimacion1}>
+                <p>{info.titulo}</p>
                 <h3>{info.subtitulo}</h3>
                 <h3>{info.subtitulo2}</h3>
               </div>
               <div>
-                <button>{info.boton}</button>
+              <button>
+                <Link target="_blank" to="https://www.pinterest.com/pcardenas91/boda-danipao-dresscode/?invite_code=ffa5a24cc2f748dcb1c487777adc890c&sender=392728167413991478">
+                  {info.boton}
+                </Link>
+              </button>
               </div>
             </article>
           </div>
@@ -55,7 +60,11 @@ const DressCode = () => {
               data-aos={animacionEntrada}
               data-aos-duration={duracionAnimacion1}
             >
-              <button>{info.boton}</button>
+              <button>
+                <Link target="_blank" to="https://www.pinterest.com/pcardenas91/boda-danipao-dresscode/?invite_code=ffa5a24cc2f748dcb1c487777adc890c&sender=392728167413991478">
+                  {info.boton}
+                </Link>
+              </button>
             </div>
           </div>
         ))}

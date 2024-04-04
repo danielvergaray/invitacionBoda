@@ -4,6 +4,7 @@ import InfoContextProvider from "./components/infoContext/InfoContextProvider";
 import Home from "./components/jsx-pages/Home";
 import DatosBancarios from "./components/jsx-pages/DatosBancarios";
 import Footer from "./components/footer/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import AgregarInvitados from "./components/agregarInvitados/AgregarInvitados";
 import "./App.scss";
