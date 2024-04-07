@@ -33,7 +33,7 @@ function PopUpModal({ show, setShow }) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Gracias por confirmar tu asistencia, nos vemos el 29 de Junio
+            Gracias por enviar tu respuesta
           </Modal.Body>
          
         </Modal>

@@ -62,7 +62,7 @@ const informacion = {
         texto: "de la tarde",
         texto: "lugar",
         texto: "Jirón La Floresta 125 - Camacho",
-        texto: "Santiado de Surco",
+        texto: "Santiago de Surco",
         boton: "ver mapa",
       },
     ],

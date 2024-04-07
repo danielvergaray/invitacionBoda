@@ -62,7 +62,7 @@ const InfoContextProvider = ({ children }) => {
           rango: "de la tarde",
           subtitulo2: "lugar",
           direccion: "Jirón La Floresta 125 - Camacho",
-          distrito: "Santiado de Surco",
+          distrito: "Santiago de Surco",
           boton: "ver mapa",
         },
       ],
@@ -142,7 +142,7 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionForm,
           titulo:
-            "Es muy importante para nosotros que confirmes tu asistencia, asegúrate de hacerlo antes del 30 de abril.",
+            "Es muy importante para nosotros que confirmes tu asistencia, asegúrate de hacerlo antes del 15 de mayo.",
           /*  inputs: [
             {
               input: "Nombre y Apellido",
@@ -198,6 +198,13 @@ const InfoContextProvider = ({ children }) => {
       ...userData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const getUserDataName = (event) => {
+    const { name, value } = event.target;
+    // Eliminar números, caracteres especiales y acentos utilizando una expresión regular
+    const sanitizedValue = value.replace(/[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    setUserData({ ...userData, [name]: sanitizedValue });
   };
 
   const [invitadoRegistrado, setInvitadoRegistrado] = useState("");
@@ -283,6 +290,7 @@ const InfoContextProvider = ({ children }) => {
     infoFooterArray,
     loading,
     getUserData,
+    getUserDataName,
     setUserData,
     userData,
     handleEnviar,

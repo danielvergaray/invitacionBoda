@@ -69,7 +69,7 @@ const SobreLaBoda = () => {
                 data-aos-duration={duracionAnimacion1} */
             >
               <h2>Jirón La Floresta 125 - Camacho</h2>
-              <h2>Santiado de Surco</h2>
+              <h2>Santiago de Surco</h2>
             </div>
             <div className="sobreBoda-btn"
               data-aos={animacionEntrada}

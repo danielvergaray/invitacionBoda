@@ -9,6 +9,7 @@ const SeccionFormulario = () => {
     infoFormArray,
     loading,
     getUserData,
+    getUserDataName,
     handleEnviar,
     userData,
     respuestaAsistencia,
@@ -58,24 +59,15 @@ const SeccionFormulario = () => {
               <input
                 type="text"
                 name="nombre"
+                 pattern="^[a-zA-Z ]*$" // Acepta solo letras (mayúsculas y minúsculas) y espacios
+        title="Solo se permiten letras (mayúsculas y minúsculas) y espacios"
                 placeholder="Nombre y Apellido"
                 value={userData.nombre}
-                onChange={getUserData}
+                onChange={getUserDataName}
                 required
               />
 
               <label htmlFor="respuesta"></label>
-              {/*   <select
-          name="respuesta"
-          value={userData.respuesta}
-          onChange={getUserData}
-          required
-        >
-          <option value="">¿Asistirás?</option>
-          <option value="Si">Sí</option>
-          <option value="No">No</option>
-        </select> */}
-
               <input
                 onClick={abrirPopUpAsistencia}
                 placeholder={`¿Asistirás? ${respuestaAsistencia}`}
