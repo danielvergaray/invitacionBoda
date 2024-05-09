@@ -142,7 +142,7 @@ const InfoContextProvider = ({ children }) => {
         {
           tituloImagen: tituloSeccionForm,
           titulo:
-            "Es muy importante para nosotros que confirmes tu asistencia, asegúrate de hacerlo antes del 15 de mayo.",
+            "Es muy importante para nosotros que confirmes tu asistencia, asegúrate de hacerlo antes del 01 de junio.",
           /*  inputs: [
             {
               input: "Nombre y Apellido",
