@@ -54,7 +54,7 @@ const SeccionFormulario = () => {
               <p>{info.titulo}</p>
             </div>
 
-            <form className="inputs-container" onSubmit={handleEnviar}>
+            <form className="inputs-container" onSubmit={(e)=>handleEnviar(e, respuestaAsistencia)}>
               <label htmlFor="nombre"></label>
               <input
                 type="text"
@@ -99,7 +99,11 @@ const SeccionFormulario = () => {
               >
                 {loading ? "Enviando..." : "Enviar"}
               </button>
-              {abrirPopUp && <PopUpModal show={show} setShow={setShow} />}
+              {!respuestaAsistencia ? (
+                <PopUpModal show={show} setShow={setShow} respuestaAsistencia="sinRespuesta" />
+              ) : (
+                abrirPopUp && <PopUpModal show={show} setShow={setShow} respuestaAsistencia="" />
+              )}
             </form>
           </article>
         </div>

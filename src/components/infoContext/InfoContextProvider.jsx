@@ -20,7 +20,7 @@ import imagen7 from "../../assets/imagenes/carousel/7.jpg";
 import imagen8 from "../../assets/imagenes/carousel/8.jpg";
 import imagen9 from "../../assets/imagenes/carousel/9.jpg";
 import imagen10 from "../../assets/imagenes/carousel/10.jpg";
-import imagenDesktop from '../../assets/imagenes/FOTODESKTOP.jpg' 
+import imagenDesktop from "../../assets/imagenes/FOTODESKTOP.jpg";
 
 import {
   getFirestore,
@@ -41,7 +41,7 @@ const InfoContextProvider = ({ children }) => {
           imagen2: imagenHome2,
           tituloImagenPortada: tituloImagenPortada,
           fecha: "29.06.24",
-          imagenDesktop: imagenDesktop
+          imagenDesktop: imagenDesktop,
         },
       ],
       seccionContador: [
@@ -203,78 +203,87 @@ const InfoContextProvider = ({ children }) => {
   const getUserDataName = (event) => {
     const { name, value } = event.target;
     // Eliminar números, caracteres especiales y acentos utilizando una expresión regular
-    const sanitizedValue = value.replace(/[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const sanitizedValue = value
+      .replace(/[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g, "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
     setUserData({ ...userData, [name]: sanitizedValue });
   };
 
   const [invitadoRegistrado, setInvitadoRegistrado] = useState("");
 
-  const handleEnviar = (event) => {
+  const handleEnviar = (event, respuestaAsistencia) => {
     event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-    setLoading(true);
-    const db = getFirestore();
 
-    // Convertir el nombre a minúsculas
-    const nombreMinusculas = userData.nombre.toLowerCase().split(" ").join("");
+    if (respuestaAsistencia) {
+      setLoading(true);
+      const db = getFirestore();
 
-    /******************  OBTENCION DE INVITADOS DESDE FIREBASE */
+      // Convertir el nombre a minúsculas
+      const nombreMinusculas = userData.nombre
+        .toLowerCase()
+        .split(" ")
+        .join("");
 
-    // Verificar si el nombre ya está registrado en Firebase
+      /******************  OBTENCION DE INVITADOS DESDE FIREBASE */
 
-    const invitadosFirebase = collection(db, "invitados");
-    const buscarInvitado = query(
-      invitadosFirebase,
-      where("nombre", "==", nombreMinusculas)
-    );
-    getDocs(buscarInvitado)
-      .then((querySnapshot) => {
-        if (!querySnapshot.empty) {
-          // Si el nombre ya está registrado
-          const docRef = querySnapshot.docs[0].ref; //accede al primer documento devuelto en la consulta y devuelve una referencia del documento.
-          const existingData = querySnapshot.docs[0].data(); //evuelve los datos del documento en forma de objeto
+      // Verificar si el nombre ya está registrado en Firebase
 
-          if (existingData.respuesta) {
-            //Verifica que el invitado ya haya respondido anteriormente
-            console.log("Este invitado ya ha respondido anteriormente");
-            setInvitadoRegistrado("repetido");
-            // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
-            return updateDoc(docRef, {
-              respuesta: userData.respuesta,
-              mensaje: userData.mensaje,
-            });
+      const invitadosFirebase = collection(db, "invitados");
+      const buscarInvitado = query(
+        invitadosFirebase,
+        where("nombre", "==", nombreMinusculas)
+      );
+      getDocs(buscarInvitado)
+        .then((querySnapshot) => {
+          if (!querySnapshot.empty) {
+            // Si el nombre ya está registrado
+            const docRef = querySnapshot.docs[0].ref; //accede al primer documento devuelto en la consulta y devuelve una referencia del documento.
+            const existingData = querySnapshot.docs[0].data(); //evuelve los datos del documento en forma de objeto
+
+            if (existingData.respuesta) {
+              //Verifica que el invitado ya haya respondido anteriormente
+              console.log("Este invitado ya ha respondido anteriormente");
+              setInvitadoRegistrado("repetido");
+              // Aquí podrías mostrar un mensaje al usuario indicando que ya ha respondido
+              return updateDoc(docRef, {
+                respuesta: userData.respuesta,
+                mensaje: userData.mensaje,
+              });
+            } else {
+              // Actualizar la respuesta del invitado
+              console.log("Respuesta actualizada correctamente en Firebase");
+              setInvitadoRegistrado("si");
+              return updateDoc(docRef, {
+                respuesta: userData.respuesta,
+                mensaje: userData.mensaje,
+              });
+            }
           } else {
-            // Actualizar la respuesta del invitado
-            console.log("Respuesta actualizada correctamente en Firebase");
-            setInvitadoRegistrado("si");
-            return updateDoc(docRef, {
-              respuesta: userData.respuesta,
-              mensaje: userData.mensaje,
-            });
+            // Si el nombre no está registrado
+            setInvitadoRegistrado("no");
+            console.log(
+              "Lo siento, su nombre no se encuentra en la lista de invitados"
+            );
+            // Aquí podrías mostrar un mensaje al usuario indicando que su nombre no está en la lista
           }
-        } else {
-          // Si el nombre no está registrado
-          setInvitadoRegistrado("no");
-          console.log(
-            "Lo siento, su nombre no se encuentra en la lista de invitados"
-          );
-          // Aquí podrías mostrar un mensaje al usuario indicando que su nombre no está en la lista
-        }
-      })
+        })
 
-      .then(() => {
-        // Limpiar los campos después de enviar
-        setUserData({
-          nombre: "",
-          respuesta: "",
-          mensaje: "",
+        .then(() => {
+          // Limpiar los campos después de enviar
+          setUserData({
+            nombre: "",
+            respuesta: "",
+            mensaje: "",
+          });
+        })
+        .catch((error) => {
+          console.error("Error al enviar datos a Firebase: ", error);
+        })
+        .finally(() => {
+          setLoading(false);
         });
-      })
-      .catch((error) => {
-        console.error("Error al enviar datos a Firebase: ", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    }
   };
 
   const [respuestaAsistencia, setRespuestaAsistencia] = useState("");

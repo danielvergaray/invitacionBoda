@@ -6,36 +6,43 @@ import { GoAlertFill } from "react-icons/go";
 import { FaCheckCircle } from "react-icons/fa";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-function PopUpModal({ show, setShow }) {
+function PopUpModal({ show, setShow, respuestaAsistencia }) {
   const { invitadoRegistrado, setInvitadoRegistrado } = useContext(InfoContext);
 
   const handleClose = () => {
     setShow(false);
-    setInvitadoRegistrado("")
-    
-  } 
- 
-  const scrollToTop=()=>{
+    setInvitadoRegistrado("");
+  };
+
+  const scrollToTop = () => {
     // Realiza el desplazamiento suave
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  }
+  };
 
   return (
     <>
-      {invitadoRegistrado === "si" ? (
+      {respuestaAsistencia === "sinRespuesta" ? (
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header onClick={()=>scrollToTop()} closeButton>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <GoAlertFill />
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Por favor, registra todas las respuestas
+          </Modal.Body>
+        </Modal>
+      ) : invitadoRegistrado === "si" ? (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header onClick={scrollToTop} closeButton>
             <Modal.Title>
               <FaCheckCircle />
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            Gracias por enviar tu respuesta
-          </Modal.Body>
-         
+          <Modal.Body>Gracias por enviar tu respuesta</Modal.Body>
         </Modal>
       ) : invitadoRegistrado === "no" ? (
         <Modal show={show} onHide={handleClose}>
@@ -47,7 +54,6 @@ function PopUpModal({ show, setShow }) {
           <Modal.Body>
             Lo sentimos, el nombre no se encuentra registrado
           </Modal.Body>
-         
         </Modal>
       ) : invitadoRegistrado === "repetido" ? (
         <Modal show={show} onHide={handleClose}>
@@ -60,7 +66,6 @@ function PopUpModal({ show, setShow }) {
             Anteriormente ya habías enviado tu respuesta, si quieres cambiarla
             comunicate con alguno de los novios por favor
           </Modal.Body>
-       
         </Modal>
       ) : null}
     </>
