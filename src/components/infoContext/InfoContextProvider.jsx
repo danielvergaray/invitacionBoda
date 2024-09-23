@@ -26,9 +26,9 @@ import {
   getFirestore,
   collection,
   query,
-  getDocs,
-  where,
   updateDoc,
+  getDocs,
+  where
 } from "firebase/firestore";
 import "aos/dist/aos.css";
 

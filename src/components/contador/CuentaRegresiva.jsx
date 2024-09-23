@@ -18,7 +18,7 @@ const CuentaRegresiva = () => {
 
   function calculateTimeLeft() {
     let difference =
-      +new Date(`6/29/${year}`) -
+      +new Date(`12/31/${year}`) -
       +new Date(); /* calcula el tiempo restante entre 2 fechas */
     let timeLeft = {};
 
